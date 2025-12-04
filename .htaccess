@@ -1,0 +1,64 @@
+# .htaccess for NJCIC Grantees Map
+
+# Custom 404 error page
+ErrorDocument 404 /grantees/map/404.html
+
+# Enable browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # HTML - no cache (always fresh)
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # JSON data - cache for 1 hour
+    ExpiresByType application/json "access plus 1 hour"
+
+    # JavaScript - cache for 1 year (use versioning for updates)
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+
+    # CSS - cache for 1 year
+    ExpiresByType text/css "access plus 1 year"
+
+    # Images - cache for 1 month
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 month"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent XSS attacks
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Service worker - no cache
+    <FilesMatch "sw\.js$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# UTF-8 encoding
+AddDefaultCharset UTF-8

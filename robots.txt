@@ -1,0 +1,10 @@
+# robots.txt for NJ Civic Information Consortium Grantees Map
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://njcivicinfo.org/grantees/map/sitemap.xml
+
+# Crawl-delay (optional, be kind to servers)
+Crawl-delay: 1

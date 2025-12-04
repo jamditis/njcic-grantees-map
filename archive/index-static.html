@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJ Civic Information Consortium Grantees Map (Static)</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+
+    <!-- Leaflet MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+        }
+
+        #map {
+            width: 100%;
+            height: 85vh;
+            z-index: 10;
+            cursor: default !important;
+        }
+
+        .full-width-breakout {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            margin-left: -50vw;
+        }
+
+        /* Hide zoom controls */
+        .leaflet-control-zoom {
+            display: none !important;
+        }
+
+        /* Disable dragging cursor */
+        .leaflet-grab, .leaflet-dragging .leaflet-grab {
+            cursor: default !important;
+        }
+
+        /* Custom tooltip styling */
+        .custom-leaflet-tooltip {
+            font-family: 'Special Elite', cursive;
+            background-color: #f5e8c8 !important;
+            border: 1px solid #d3c4a8 !important;
+            border-left: 6px solid #2dc8d2 !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+            min-width: 250px;
+            max-width: 300px;
+            white-space: normal;
+            word-wrap: break-word;
+            padding: 0.75rem !important;
+        }
+
+        .tooltip-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 0.35rem;
+            overflow-wrap: break-word;
+        }
+
+        .tooltip-info {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.3;
+        }
+
+        /* Marker cluster colors */
+        .marker-cluster-small {
+            background-color: rgba(45, 200, 210, 0.6);
+        }
+        .marker-cluster-small div {
+            background-color: rgba(45, 200, 210, 0.8);
+        }
+        .marker-cluster-medium {
+            background-color: rgba(243, 66, 19, 0.6);
+        }
+        .marker-cluster-medium div {
+            background-color: rgba(243, 66, 19, 0.8);
+        }
+        .marker-cluster-large {
+            background-color: rgba(24, 54, 66, 0.6);
+        }
+        .marker-cluster-large div {
+            background-color: rgba(24, 54, 66, 0.8);
+        }
+
+        /* Custom marker icon */
+        .custom-marker {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2dc8d2 0%, #183642 100%);
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .custom-marker:hover {
+            transform: scale(1.15);
+        }
+
+        /* Modal styling */
+        #modal-overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+        #modal-content {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-6 md:py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="mb-6">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                    NJ Civic Information Consortium grantees
+                </h1>
+                <p class="text-lg text-gray-600">
+                    Static map of journalism and civic engagement projects across New Jersey
+                </p>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-xl shadow-lg p-4 mb-6">
+            <div class="flex flex-wrap gap-4 items-end">
+                <div class="flex-1 min-w-[150px]">
+                    <label for="year-filter" class="block text-sm font-medium text-gray-700 mb-1">Year</label>
+                    <select id="year-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2dc8d2] focus:border-transparent">
+                        <option value="all">All years</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+                <div class="flex-1 min-w-[150px]">
+                    <label for="county-filter" class="block text-sm font-medium text-gray-700 mb-1">County</label>
+                    <select id="county-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2dc8d2] focus:border-transparent">
+                        <option value="all">All counties</option>
+                    </select>
+                </div>
+                <div class="flex-1 min-w-[150px]">
+                    <label for="focus-filter" class="block text-sm font-medium text-gray-700 mb-1">Focus area</label>
+                    <select id="focus-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2dc8d2] focus:border-transparent">
+                        <option value="all">All focus areas</option>
+                    </select>
+                </div>
+                <div class="flex-1 min-w-[150px]">
+                    <label for="status-filter" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                    <select id="status-filter" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2dc8d2] focus:border-transparent">
+                        <option value="all">All</option>
+                        <option value="active">Active</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <button id="reset-filters" class="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium">
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <div class="text-sm text-gray-600 mb-1">Total grantees</div>
+                <div id="total-grantees" class="text-3xl font-bold text-[#2dc8d2]">0</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <div class="text-sm text-gray-600 mb-1">Total funding</div>
+                <div id="total-funding" class="text-3xl font-bold text-[#2dc8d2]">$0</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg p-4">
+                <div class="text-sm text-gray-600 mb-1">Active projects</div>
+                <div id="active-projects" class="text-3xl font-bold text-[#2dc8d2]">0</div>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="full-width-breakout my-8">
+            <div class="relative">
+                <div id="map" class="rounded-none md:rounded-xl shadow-2xl"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center py-8 mt-8 border-t border-gray-200">
+            <p class="text-gray-600 text-sm">
+                Data source: New Jersey Civic Information Consortium |
+                Created by <a href="https://centerforcooperativemedia.org" target="_blank" class="text-[#2dc8d2] hover:underline">Center for Cooperative Media</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-60 z-40 hidden items-center justify-center p-4" onclick="closeModal()">
+        <div id="modal-content" class="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-2xl w-full relative transform scale-95 opacity-0 max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 id="modal-title" class="text-2xl font-bold text-gray-800 mb-2"></h2>
+            <div id="modal-location" class="text-gray-600 mb-4"></div>
+            <p id="modal-description" class="text-gray-700 leading-relaxed mb-6"></p>
+            <div id="modal-details" class="space-y-2 mb-6"></div>
+            <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#f34213] text-white font-semibold py-2 px-6 rounded-lg hover:bg-[#183642] transition-colors">
+                Visit website
+            </a>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <!-- Leaflet MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <!-- App JS -->
+    <script src="js/app-static.js"></script>
+</body>
+</html>

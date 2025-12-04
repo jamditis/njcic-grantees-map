@@ -1,0 +1,24 @@
+{
+  "name": "njcic-map",
+  "version": "1.0.0",
+  "description": "Interactive map of New Jersey Civic Information Consortium grantees",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "dev": "npx http-server -p 8080 -o",
+    "process-csv": "node scripts/process-csv.js",
+    "update-coords": "node scripts/improved-geocoding.js"
+  },
+  "keywords": [
+    "njcic",
+    "mapping",
+    "journalism",
+    "new-jersey",
+    "openstreetmap"
+  ],
+  "author": "Joe Amditis",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
