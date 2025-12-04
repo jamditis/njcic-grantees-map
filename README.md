@@ -74,7 +74,6 @@ njcic-map/
 │   └── CHANGELOG.md           # Detailed changelog of updates
 ├── index.html                 # Main HTML file
 ├── package.json               # Project metadata and dependencies
-├── CLAUDE.md                  # Development guide for Claude Code
 └── README.md                  # This file
 ```
 
