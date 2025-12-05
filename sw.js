@@ -1,7 +1,7 @@
 // Service Worker for NJCIC Grantees Map
 // Provides offline support and caching
 
-const CACHE_NAME = 'njcic-map-v1';
+const CACHE_NAME = 'njcic-map-v2';
 const OFFLINE_URL = '404.html';
 
 // Assets to cache on install
@@ -28,23 +28,19 @@ self.addEventListener('install', event => {
         caches.open(CACHE_NAME)
             .then(cache => {
                 console.log('[ServiceWorker] Caching app shell');
-                // Cache local assets first (these should always succeed)
-                const localAssets = ASSETS_TO_CACHE.filter(url => !url.startsWith('http'));
-                const remoteAssets = ASSETS_TO_CACHE.filter(url => url.startsWith('http'));
-
-                return cache.addAll(localAssets)
-                    .then(() => {
-                        // Try to cache remote assets but don't fail if some don't work
-                        return Promise.allSettled(
-                            remoteAssets.map(url =>
-                                cache.add(url).catch(err => {
-                                    console.log('[ServiceWorker] Failed to cache:', url, err);
-                                })
-                            )
-                        );
-                    });
+                // Cache all assets individually to handle failures gracefully
+                return Promise.allSettled(
+                    ASSETS_TO_CACHE.map(url =>
+                        cache.add(url).catch(err => {
+                            console.log('[ServiceWorker] Failed to cache:', url, err.message);
+                        })
+                    )
+                );
             })
             .then(() => self.skipWaiting())
+            .catch(err => {
+                console.log('[ServiceWorker] Install failed:', err.message);
+            })
     );
 });
 
