@@ -336,11 +336,17 @@
                 inset 0 1px 0 rgba(255,255,255,0.1);
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
+            opacity: 1;
+            transform: translateY(0) scale(1);
             transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
             will-change: transform, opacity;
             backface-visibility: hidden;
+        }
+
+        /* When JS is available, start hidden for animation */
+        .js-enabled .impact-card {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
         }
 
         .impact-card.animate-in {
