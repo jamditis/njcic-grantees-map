@@ -2,9 +2,13 @@
 
 An interactive web-based map visualizing grantees of the New Jersey Civic Information Consortium. This project displays journalism and civic engagement projects across New Jersey using CARTO Voyager tiles and Leaflet.js.
 
+![screenshot of map](https://i.imgur.com/yoYai54.png)
+
 ## About the project
 
 The New Jersey Civic Information Consortium supports local journalism, civic engagement, and information equity projects throughout New Jersey. This interactive map helps visualize the geographic distribution of grants, funding amounts, and project details.
+
+![impact of njcic at a glance](https://i.imgur.com/AkmNypD.png)
 
 ## Features
 
