@@ -819,6 +819,9 @@ function initImpactSection() {
     const impactSection = document.querySelector('.impact-section');
     if (!impactSection) return;
 
+    // Enable JS-dependent animations (cards start visible, then animate)
+    document.documentElement.classList.add('js-enabled');
+
     // Trigger header animation when section comes into view
     const impactHeader = document.getElementById('impact-header');
     const headerObserver = new IntersectionObserver((entries) => {
