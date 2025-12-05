@@ -404,21 +404,10 @@
             transition: transform 1s var(--ease-smooth) 0.1s, opacity 1s ease 0.1s;
         }
 
-        /* When JS is available, start hidden for animation */
-        .js-enabled .stat-value,
-        .js-enabled .stat-label {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        .impact-card.animate-in .stat-value,
-        .impact-card.animate-in .stat-label {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .impact-card.animate-in .stat-label {
-            opacity: 0.9;
+        /* Stat values always visible - no animation hiding */
+        .stat-value,
+        .stat-label {
+            opacity: 1 !important;
         }
 
         /* Text size classes */
@@ -780,74 +769,54 @@
                     <div class="impact-grid mb-8">
                         <!-- Row 1 -->
                         <div class="impact-card bg-impact-teal area-1 text-white" style="animation-delay: 100ms;">
-                            <span class="stat-value text-huge" aria-label="$11,880,438">
-                                <span class="symbol">$</span><span class="counter" data-target="11880438">0</span>
-                            </span>
+                            <span class="stat-value text-huge">$11,880,438</span>
                             <span class="stat-label">Invested in civic information across the state</span>
                         </div>
 
                         <div class="impact-card bg-impact-orange area-2 text-white" style="animation-delay: 250ms;">
-                            <span class="stat-value text-large" aria-label="9,065">
-                                <span class="counter" data-target="9065">0</span>
-                            </span>
+                            <span class="stat-value text-large">9,065</span>
                             <span class="stat-label">Stories published since 2021*</span>
                         </div>
 
                         <div class="impact-card bg-impact-dark-blue area-3 text-white" style="animation-delay: 400ms;">
-                            <span class="stat-value text-large" aria-label="14,493">
-                                <span class="counter" data-target="14493">0</span>
-                            </span>
+                            <span class="stat-value text-large">14,493</span>
                             <span class="stat-label">News briefs published since 2021*</span>
                         </div>
 
                         <!-- Row 2 -->
                         <div class="impact-card bg-impact-darker-blue area-4 text-white" style="animation-delay: 550ms;">
-                            <span class="stat-value text-large" aria-label="3,856">
-                                <span class="counter" data-target="3856">0</span>
-                            </span>
+                            <span class="stat-value text-large">3,856</span>
                             <span class="stat-label">Ethnic/BIPOC & Spanish-language stories</span>
                         </div>
 
                         <div class="impact-card bg-impact-yellow area-5" style="animation-delay: 700ms;">
-                            <span class="stat-value text-large" aria-label="1,271">
-                                <span class="counter" data-target="1271">0</span>
-                            </span>
+                            <span class="stat-value text-large">1,271</span>
                             <span class="stat-label">New storytellers trained across NJ**</span>
                         </div>
 
                         <div class="impact-card bg-impact-cyan area-6 text-white" style="animation-delay: 850ms;">
-                            <span class="stat-value text-large" aria-label="2,327">
-                                <span class="counter" data-target="2327">0</span>
-                            </span>
+                            <span class="stat-value text-large">2,327</span>
                             <span class="stat-label">NJCIC-funded stories amplified across other news platforms</span>
                         </div>
 
                         <!-- Row 3 -->
                         <div class="impact-card bg-impact-red area-7 text-white" style="animation-delay: 1000ms;">
-                            <span class="stat-value text-med" aria-label="158">
-                                <span class="counter" data-target="158">0</span>
-                            </span>
+                            <span class="stat-value text-med">158</span>
                             <span class="stat-label">Residents trained to cover public meetings in NJ</span>
                         </div>
 
                         <div class="impact-card bg-impact-dark-blue area-8 text-white" style="animation-delay: 1150ms;">
-                            <span class="stat-value text-med" aria-label="135">
-                                <span class="counter" data-target="135">0</span>
-                            </span>
+                            <span class="stat-value text-med">135</span>
                             <span class="stat-label">Grants awarded since 2021</span>
                         </div>
 
                         <div class="impact-card bg-impact-red area-9 text-white" style="animation-delay: 1300ms;">
-                            <span class="stat-value text-med" aria-label="48%">
-                                <span class="counter" data-target="48">0</span><span class="suffix">%</span>
-                            </span>
+                            <span class="stat-value text-med">48%</span>
                             <span class="stat-label">BIPOC-led projects</span>
                         </div>
 
                         <div class="impact-card bg-impact-yellow area-10" style="animation-delay: 1450ms;">
-                            <span class="stat-value text-med" aria-label="86%">
-                                <span class="counter" data-target="86">0</span><span class="suffix">%</span>
-                            </span>
+                            <span class="stat-value text-med">86%</span>
                             <span class="stat-label">NJ counties represented</span>
                         </div>
                     </div>
@@ -864,38 +833,128 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-6 mt-6">
-            <div class="prose max-w-none">
-                <p class="text-gray-700 mb-4">
-                    The New Jersey Civic Information Consortium is an independent, 501(c)(3) nonprofit organization that funds initiatives to benefit the State's civic life and meet the evolving information needs of New Jersey's communities.
-                </p>
+        <!-- About Section Redesign -->
+        <section class="about-section relative my-16 px-4">
+            <!-- Decorative background elements -->
+            <div class="absolute inset-0 bg-dot-pattern opacity-10 pointer-events-none -z-10"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto">
+                <!-- Mission Card -->
+                <div class="lg:col-span-7 bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-[#2dc8d2]"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] -z-10 opacity-50 transition-transform group-hover:scale-110 duration-700"></div>
+                    
+                    <h2 class="text-3xl font-bold text-[#183642] mb-6 font-space-grotesk flex items-center gap-3">
+                        <span class="w-10 h-1 bg-[#2dc8d2] inline-block rounded-full"></span>
+                        Our Mission
+                    </h2>
+                    
+                    <div class="prose prose-lg text-gray-600 leading-relaxed">
+                        <p class="mb-6">
+                            The <strong class="text-[#183642]">New Jersey Civic Information Consortium</strong> is an independent, 501(c)(3) nonprofit organization that funds initiatives to benefit the State's civic life and meet the evolving information needs of New Jersey's communities.
+                        </p>
+                        
+                        <p class="mb-6">
+                            A first-in-the-nation project, the Consortium builds on the foundation laid by public media in the United States, and reimagines how public funding can be used to address the growing problem of news deserts, misinformation, and support more informed communities.
+                        </p>
+                        
+                        <div class="bg-[#f0f9fa] rounded-xl p-6 border border-[#b8e6e9] mt-8 flex items-start gap-4">
+                            <div class="bg-[#2dc8d2] rounded-full p-2 text-white shrink-0 mt-1 shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-[#183642] mb-1">Historic Investment</h3>
+                                <p class="text-sm text-[#183642]">
+                                    To date, the Consortium has invested more than <span class="font-bold text-lg border-b-2 border-[#2dc8d2]">$10 million</span> in local news across the state, supporting nearly 75 newsrooms in 19 of New Jersey's 21 counties.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <p class="text-gray-700 mb-4">
-                    A first-in-the-nation project, the Consortium builds on the foundation laid by public media in the United States, and reimagines how public funding can be used to address the growing problem of news deserts, misinformation, and support more informed communities. The consortium provides grants for projects that achieve the following goals:
-                </p>
+                <!-- Goals Card -->
+                <div class="lg:col-span-5 bg-[#183642] rounded-2xl shadow-xl p-8 md:p-10 text-white relative overflow-hidden flex flex-col h-full">
+                    <!-- Decor -->
+                    <div class="absolute bottom-0 right-0 w-64 h-64 bg-[#2dc8d2] opacity-10 rounded-tl-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHNjbGFzcz0iZmlsbC1jdXJyZW50IiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9zdmc+')] opacity-30 pointer-events-none"></div>
 
-                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4">
-                    <li>Improve the quantity and quality of civic information in New Jersey communities.</li>
-                    <li>Give residents enhanced access to useful government data and public information through innovative applications, platforms, and technologies.</li>
-                    <li>Train students, professionals, and community members in the practice of community storytelling, journalism, and media production.</li>
-                    <li>Nurture better civic engagement and dialogue inside and between New Jersey communities.</li>
-                    <li>Better meet the information needs of low-income communities and racial and ethnic communities that have been underserved by the media.</li>
-                    <li>Invest in research and practices that can help media outlets become more closely connected to their audiences and more sustainable without government support.</li>
-                </ul>
-
-                <p class="text-lg font-semibold text-gray-800">
-                    To date, the Consortium has invested more than $10 million in local news across the state, supporting nearly 75 newsrooms in 19 of New Jersey's 21 counties.
-                </p>
+                    <h2 class="text-2xl font-bold text-[#2dc8d2] mb-6 font-space-grotesk border-b border-gray-700 pb-4">Strategic Goals</h2>
+                    
+                    <ul class="space-y-4 relative z-10 flex-grow">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0"></path></svg>
+                            <span class="text-gray-200 text-sm leading-relaxed">Improve quantity and quality of civic information.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                            <span class="text-gray-200 text-sm leading-relaxed">Enhanced access to government data and public info.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            <span class="text-gray-200 text-sm leading-relaxed">Train residents in storytelling & media production.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <span class="text-gray-200 text-sm leading-relaxed">Nurture better civic engagement and dialogue.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            <span class="text-gray-200 text-sm leading-relaxed">Meet needs of underserved low-income & BIPOC communities.</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-700">
+                        <a href="https://njcivicinfo.org/wp-content/uploads/2024/09/NJCIC-Strategic-Plan-2024-2026.pdf" target="_blank" class="group inline-flex items-center text-[#2dc8d2] font-bold text-sm hover:text-white transition-colors">
+                            Read full strategic plan
+                            <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Footer -->
-        <footer class="text-center py-8 mt-8 border-t border-gray-200">
-            <p class="text-gray-600 text-sm">
-                Data source: New Jersey Civic Information Consortium |
-                Created by <a href="https://centerforcooperativemedia.org" target="_blank" class="text-[#2dc8d2] hover:underline">Center for Cooperative Media</a>
-            </p>
+        <!-- New Site Footer -->
+        <footer class="site-footer bg-[#112231] text-white rounded-t-3xl mt-20 relative overflow-hidden">
+            <!-- Top teal accent bar -->
+            <div class="h-1.5 w-full bg-gradient-to-r from-[#2dc8d2] via-[#2dc8d2] to-[#183642]"></div>
+            
+            <div class="container mx-auto px-8 py-12 max-w-7xl relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <!-- Brand Column -->
+                    <div class="lg:col-span-2 space-y-4">
+                        <img src="https://njcivicinfo.org/wp-content/uploads/2024/09/NJCIC-Full-Text-Logo-300x150.png" alt="NJCIC Logo" class="h-12 w-auto brightness-0 invert opacity-90 mb-2">
+                        <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                            Building a stronger, more informed New Jersey through community storytelling, journalism, and civic engagement.
+                        </p>
+                    </div>
+
+                    <!-- Links Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Resources</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="https://njcivicinfo.org/grants/" class="hover:text-[#2dc8d2] transition-colors">Grant Programs</a></li>
+                            <li><a href="https://njcivicinfo.org/press/" class="hover:text-[#2dc8d2] transition-colors">Latest News</a></li>
+                            <li><a href="https://njcivicinfo.org/team/" class="hover:text-[#2dc8d2] transition-colors">Team</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Links Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contact</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="mailto:info@njcivicinfo.org" class="hover:text-[#2dc8d2] transition-colors">Get in Touch</a></li>
+                            <li><a href="https://secure.everyaction.com/-A4uO6gJP0ami_tIU_0paA2" class="hover:text-[#2dc8d2] transition-colors">Subscribe</a></li>
+                            <li class="pt-4 text-xs text-gray-600">Created by <a href="https://centerforcooperativemedia.org" class="hover:text-gray-400 underline decoration-gray-700 underline-offset-2">Center for Cooperative Media</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <p>&copy; 2024 NJ Civic Information Consortium. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
     </div>
 

@@ -278,21 +278,12 @@ aside {
 
 /* Footer */
 footer {
-    background: #f8f9fa;
-    padding: 1rem 2rem;
-    text-align: center;
-    border-top: 1px solid #dee2e6;
-    font-size: 0.85rem;
-    color: #6c757d;
+    text-align: left;
 }
 
 footer a {
-    color: #2dc8d2;
+    color: inherit;
     text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -352,4 +343,14 @@ footer a:hover {
 
 .marker-cluster-large div {
     background-color: rgba(24, 54, 66, 0.8);
+}
+
+/* About Section Background */
+.bg-dot-pattern {
+    background-image: radial-gradient(#183642 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
 }
