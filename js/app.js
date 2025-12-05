@@ -786,3 +786,84 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+// Impact stats animated counter - Improved version
+function animateImpactCounter(counterEl) {
+    const target = parseInt(counterEl.getAttribute('data-target'), 10);
+    const duration = 2500; // 2.5s for smoother count
+    let startTime = null;
+
+    const updateCount = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Improved easeOutQuart: 1 - pow(1 - x, 4)
+        const ease = 1 - Math.pow(1 - progress, 4);
+
+        const currentVal = Math.floor(ease * target);
+        counterEl.innerText = currentVal.toLocaleString('en-US');
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCount);
+        } else {
+            counterEl.innerText = target.toLocaleString('en-US');
+        }
+    };
+
+    requestAnimationFrame(updateCount);
+}
+
+// Initialize impact section with card animations and counters
+function initImpactSection() {
+    const impactSection = document.querySelector('.impact-section');
+    if (!impactSection) return;
+
+    // Trigger header animation when section comes into view
+    const impactHeader = document.getElementById('impact-header');
+    const headerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, 100);
+                headerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    if (impactHeader) {
+        headerObserver.observe(impactHeader);
+    }
+
+    // Card reveal animations
+    const cards = document.querySelectorAll('.impact-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => cardObserver.observe(card));
+
+    // Counter animations - trigger when counters become visible
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                // Stagger counter slightly after card reveal
+                setTimeout(() => animateImpactCounter(counter), 400);
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+}
+
+// Initialize impact section when DOM is ready
+document.addEventListener('DOMContentLoaded', initImpactSection);
