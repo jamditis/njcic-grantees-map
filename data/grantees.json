@@ -1275,21 +1275,6 @@
       "focusArea": "Journalism pipeline"
     },
     {
-      "name": "New Jersey Monitor",
-      "county": "Statewide",
-      "city": "Newark",
-      "years": [
-        "2026"
-      ],
-      "amount": 210000,
-      "description": "The New Jersey Monitor is an independent, nonprofit and nonpartisan news site that strives to be a watchdog for all residents of the Garden State. This funding supports hiring a healthcare reporter in collaboration with the Robert Wood Johnson Foundation.",
-      "lat": 40.7357,
-      "lng": -74.1724,
-      "status": "active",
-      "website": "https://newjerseymonitor.com",
-      "focusArea": "Civic news and information reporting"
-    },
-    {
       "name": "Newark News and Story Collaborative",
       "county": "Essex County",
       "city": "Newark",
@@ -1944,7 +1929,7 @@
             "2024"
           ],
           "amount": 295000,
-          "description": "Received funding to build The Jersey Vindicator — the "ProPublica of New Jersey" — with the goal of engaging and empowering the public through investigative journalism at the local, county, and state level in its publication, ultimately ensuring that residents — particularly those in underserved communities — are better informed about government, business, education, transportation, criminal justice reform, and the environment.",
+          "description": "Received funding to build The Jersey Vindicator — the 'ProPublica of New Jersey' — with the goal of engaging and empowering the public through investigative journalism at the local, county, and state level in its publication, ultimately ensuring that residents — particularly those in underserved communities — are better informed about government, business, education, transportation, criminal justice reform, and the environment.",
           "focusArea": "Civic news and information reporting",
           "status": "active"
         },
@@ -2193,8 +2178,8 @@
     }
   ],
   "metadata": {
-    "totalGrantees": 75,
-    "totalFunding": 12070438.63,
+    "totalGrantees": 74,
+    "totalFunding": 11860438.63,
     "lastUpdated": "2025-12-09T00:00:00.000Z",
     "dataSource": "2025-2026-updated-grants.csv",
     "note": "Organizations with business suffix variations (Inc., LLC, etc.) have been consolidated. Project-specific details are preserved. Updated with December 2025 NCIC grants."
