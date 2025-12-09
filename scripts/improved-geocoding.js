@@ -39,9 +39,9 @@ const specificLocations = {
     'Hopeloft': { lat: 39.4273, lng: -75.2341, city: 'Bridgeton' },
     'Hopeloft, Inc.': { lat: 39.4273, lng: -75.2341, city: 'Bridgeton' },
     'coLAB Arts': { lat: 40.4922, lng: -74.4513, city: 'New Brunswick' },
-    'Black in Jersey': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
-    'Black In Jersey': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
-    'The Jersey Vindicator': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
+    'Black in Jersey': { lat: 40.2206, lng: -74.7597, city: 'Trenton' },
+    'Black In Jersey': { lat: 40.2206, lng: -74.7597, city: 'Trenton' },
+    'The Jersey Vindicator': { lat: 40.2206, lng: -74.7597, city: 'Trenton' },
     'New Jersey Center for Investigative Reporting (The Jersey Vindicator)': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
     'Public Square Amplified': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
     'Clinton Hill Community Action': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
@@ -72,7 +72,7 @@ const specificLocations = {
     'New Jersey YMCA State Alliance': { lat: 40.2206, lng: -74.7597, city: 'Trenton' },
     'WNET/NJ Spotlight News': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
     'NJ Spotlight News': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
-    'Unidad Latina en Acción NJ': { lat: 40.5008, lng: -74.4474, city: 'New Brunswick' },
+    'Unidad Latina en Acción NJ': { lat: 40.3573, lng: -74.6672, city: 'Princeton' },
     'New Jersey Council for the Humanities and Journalism + Design': { lat: 40.2206, lng: -74.7597, city: 'Trenton' },
     'NJ Coalition to End Homelessness': { lat: 40.2206, lng: -74.7597, city: 'Trenton' },
     'DataSourceNJ Inc.': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
@@ -94,7 +94,11 @@ const specificLocations = {
     'TAPinto FairLawn/GlenRock': { lat: 40.9401, lng: -74.1321, city: 'Fair Lawn' },
     'TAPinto Hasbrouk Heights': { lat: 40.8584, lng: -74.0821, city: 'Hasbrouck Heights' },
     'TAPinto Raritan Bay (Sayreville/South Amboy) and TAPinto Scotch Plains-Fanwood': { lat: 40.4587, lng: -74.3610, city: 'Sayreville' },
-    'New Jersey Hills Media Group': { lat: 40.7968, lng: -74.4815, city: 'Morristown' }
+    'New Jersey Hills Media Group': { lat: 40.7968, lng: -74.4815, city: 'Morristown' },
+    'New Jersey Monitor': { lat: 40.7357, lng: -74.1724, city: 'Newark' },
+    'Village Green NJ': { lat: 40.7312, lng: -74.2776, city: 'Maplewood' },
+    'South Jersey Emerging Journalism Project': { lat: 39.9259, lng: -75.1196, city: 'Camden' },
+    'MercerMe': { lat: 40.3887, lng: -74.7682, city: 'Hopewell' }
 };
 
 // Read the current grantees.json
