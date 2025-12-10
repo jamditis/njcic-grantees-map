@@ -74,10 +74,14 @@ function showErrorState(message) {
         `;
     }
 
-    // Update stats to show zeros
-    document.getElementById('total-grantees').textContent = '0';
-    document.getElementById('total-funding').textContent = '$0';
-    document.getElementById('active-projects').textContent = '0';
+    // Update stats to show zeros (if elements exist)
+    const totalGranteesEl = document.getElementById('total-grantees');
+    const totalFundingEl = document.getElementById('total-funding');
+    const activeProjectsEl = document.getElementById('active-projects');
+
+    if (totalGranteesEl) totalGranteesEl.textContent = '0';
+    if (totalFundingEl) totalFundingEl.textContent = '$0';
+    if (activeProjectsEl) activeProjectsEl.textContent = '0';
 }
 
 // Initialize the Leaflet map
@@ -309,9 +313,13 @@ function updateStats() {
         ? IMPACT_TOTAL_FUNDING
         : filteredGrantees.reduce((sum, g) => sum + g.amount, 0);
 
-    document.getElementById('total-grantees').textContent = totalGrantees;
-    document.getElementById('total-funding').textContent = `$${totalFunding.toLocaleString()}`;
-    document.getElementById('active-projects').textContent = activeProjects;
+    const totalGranteesEl = document.getElementById('total-grantees');
+    const totalFundingEl = document.getElementById('total-funding');
+    const activeProjectsEl = document.getElementById('active-projects');
+
+    if (totalGranteesEl) totalGranteesEl.textContent = totalGrantees;
+    if (totalFundingEl) totalFundingEl.textContent = `$${totalFunding.toLocaleString()}`;
+    if (activeProjectsEl) activeProjectsEl.textContent = activeProjects;
 }
 
 // Apply filters
