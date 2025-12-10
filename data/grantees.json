@@ -9,8 +9,8 @@
       ],
       "amount": 10000,
       "description": "Received funding to implement new technological solutions including software and hardware updates, website development, subscriptions for cloud-based applications, and computer equipment.",
-      "lat": 39.5501,
-      "lng": -75,
+      "lat": 39.8989,
+      "lng": -74.9275,
       "status": "active",
       "website": "https://www.70and73.com",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant"
@@ -88,9 +88,9 @@
         "2022"
       ],
       "amount": 93876,
-      "description": "Received funding to launch and develop “be.tv eStudios,” an initiative teaching Burlington County students and young adults, ages 14-24, storytelling and media production skills with an emphasis on conducting interviews with professionals, business leaders, educators, etc., and using online gaming techniques for capturing and promoting interview highlights. It also teaches media and business skills and has involved students in organizing and staging esports tournaments and programs.",
-      "lat": 39.9526,
-      "lng": -74.7118,
+      "description": "Received funding to launch and develop 'be.tv eStudios,' an initiative teaching Burlington County students and young adults, ages 14-24, storytelling and media production skills with an emphasis on conducting interviews with professionals, business leaders, educators, etc., and using online gaming techniques for capturing and promoting interview highlights. It also teaches media and business skills and has involved students in organizing and staging esports tournaments and programs.",
+      "lat": 39.9929,
+      "lng": -74.7877,
       "status": "completed",
       "website": "https://beyondexp.net/collaborate",
       "focusArea": "Journalism pipeline"
@@ -105,9 +105,9 @@
         "2024"
       ],
       "amount": 270000,
-      "description": "Received funding to support the launch of Black in Jersey as a reliable news and information hub serving New Jersey’s Black communities, and also to provide support for the organization’s first statehouse and local government reporting cohort, and to launch its incubator program featuring Millennial and Generation Z-led news services — including the Hotspot Podcast.",
-      "lat": 40.7357,
-      "lng": -74.1724,
+      "description": "Received funding to support the launch of Black in Jersey as a reliable news and information hub serving New Jersey's Black communities, and also to provide support for the organization's first statehouse and local government reporting cohort, and to launch its incubator program featuring Millennial and Generation Z-led news services — including the Hotspot Podcast.",
+      "lat": 40.2171,
+      "lng": -74.7429,
       "status": "active",
       "website": "https://www.blackinjersey.com",
       "focusArea": "Civic news and information reporting; Blue Engine Tech & Sustainability Accelerator Grant",
@@ -152,8 +152,8 @@
       ],
       "amount": 100000,
       "description": "Received funding to support the launch of a multimedia civic news platform created by and for Muslim-Americans, including staff hiring, student internships, and community engagement.",
-      "lat": 40.0583,
-      "lng": -74.4057,
+      "lat": 40.7357,
+      "lng": -74.1724,
       "status": "active",
       "website": "https://cair-nj.org/?gad_source=1&gad_campaignid=22804431776&gbraid=0AAAAAo5RPHDNS5X6Dl1Z8PSI93YhC8_U1&gclid=Cj0KCQjw58PGBhCkARIsADbDilzICFHnaVE2mDoofyQk0b2FnGoZHh_xrtLvwJr8NK8iashAzmX52UYaAn9dEALw_wcB",
       "focusArea": "Civic engagement in NJ communities"
@@ -611,15 +611,15 @@
     },
     {
       "name": "Heady NJ",
-      "county": "Statewide",
-      "city": "Trenton",
+      "county": "Monmouth County",
+      "city": "Hazlet",
       "years": [
         "2024"
       ],
       "amount": 10000,
       "description": "Received funding to implement new technological solutions including software and hardware updates, website development, subscriptions for cloud-based applications, and computer equipment.",
-      "lat": 40.0583,
-      "lng": -74.4057,
+      "lat": 40.4289,
+      "lng": -74.1651,
       "status": "active",
       "website": "headynj.com",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant"
@@ -793,8 +793,8 @@
       ],
       "amount": 10000,
       "description": "Received funding to implement new technological solutions including software and hardware updates, website development, subscriptions for cloud-based applications, and computer equipment.",
-      "lat": 40.0583,
-      "lng": -74.4057,
+      "lat": 40.7357,
+      "lng": -74.1724,
       "status": "active",
       "website": "WWW.THELATINOSPIRIT.COM",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant"
@@ -832,15 +832,15 @@
     {
       "name": "MercerMe",
       "county": "Mercer County",
-      "city": "Trenton",
+      "city": "Pennington",
       "years": [
         "2024",
         "2025"
       ],
       "amount": 13300,
       "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
-      "lat": 40.2206,
-      "lng": -74.7597,
+      "lat": 40.3249,
+      "lng": -74.7888,
       "status": "active",
       "website": "www.mercerme.com",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline",
@@ -970,17 +970,17 @@
     },
     {
       "name": "Movimiento Cosecha",
-      "county": "Middlesex County",
-      "city": "New Brunswick",
+      "county": "Union County",
+      "city": "Elizabeth",
       "years": [
         "2021",
         "2022",
         "2023"
       ],
       "amount": 185000,
-      "description": "Received funding to work with Rutgers University to establish Radio Cosecha, a twice-weekly Spanish-language internet-radio program for the state’s Spanish-speaking immigrant community, telling the stories of seasonal agricultural workers in South Jersey. Cosecha researches and delivers important local, national, and international news in an accessible format, in order to achieve greater civic participation within New Jersey’s immigrant community.",
-      "lat": 40.5795,
-      "lng": -74.5089,
+      "description": "Received funding to work with Rutgers University to establish Radio Cosecha, a twice-weekly Spanish-language internet-radio program for the state's Spanish-speaking immigrant community, telling the stories of seasonal agricultural workers in South Jersey. Cosecha researches and delivers important local, national, and international news in an accessible format, in order to achieve greater civic participation within New Jersey's immigrant community.",
+      "lat": 40.6660,
+      "lng": -74.2009,
       "status": "completed",
       "website": "https://www.lahuelga.com",
       "focusArea": "Civic news and information reporting"
@@ -1443,8 +1443,8 @@
     },
     {
       "name": "South Jersey Climate News Project",
-      "county": "South Jersey",
-      "city": "Cherry Hill",
+      "county": "Gloucester County",
+      "city": "Glassboro",
       "years": [
         "2022",
         "2023",
@@ -1452,8 +1452,8 @@
       ],
       "amount": 115320,
       "description": "Received funding to provide stipends for student interns providing high quality news coverage of climate change in South Jersey, including the impact on the environment, agriculture, the Pine Barrens, beaches, tourism, and wetlands.",
-      "lat": 39.9544,
-      "lng": -75.1621,
+      "lat": 39.7029,
+      "lng": -75.1118,
       "status": "active",
       "website": "https://sjclimate.news",
       "focusArea": "Civic news and information reporting"
@@ -1830,8 +1830,8 @@
       ],
       "amount": 35000,
       "description": "Received funding to will add more features to its health information website to help residents statewide — including native Spanish speakers and others in underserved communities — get real-time information about vaccination appointment locations and vaccine availability.",
-      "lat": 40.0583,
-      "lng": -74.4057,
+      "lat": 40.7357,
+      "lng": -74.1724,
       "status": "completed",
       "website": "",
       "focusArea": "Civic news and information reporting"
@@ -1866,13 +1866,45 @@
       "status": "active",
       "website": "https://whhspatriotpress.com/category/multimedia/",
       "focusArea": "Journalism pipeline"
+    },
+    {
+      "name": "New Jersey Monitor",
+      "county": "Statewide",
+      "city": "Trenton",
+      "years": [
+        "2025"
+      ],
+      "amount": 210000,
+      "description": "Received funding to support healthcare reporting, including hiring healthcare reporter Lilo Stainton. The New Jersey Monitor is an independent, nonprofit and nonpartisan news site that strives to be a watchdog for all residents of the Garden State, holding powerful people accountable and explaining how their actions affect New Jerseyans.",
+      "lat": 40.2206,
+      "lng": -74.7597,
+      "status": "active",
+      "website": "https://newjerseymonitor.com",
+      "focusArea": "Civic news and information reporting"
+    },
+    {
+      "name": "Village Green NJ",
+      "county": "Essex County",
+      "city": "Maplewood",
+      "years": [
+        "2025"
+      ],
+      "amount": 40000,
+      "description": "Received funding to add an education and training component by hiring and mentoring high school and college students. The program will intentionally recruit and support a diverse group of aspiring journalists while expanding both the topics and geographic scope of Village Green's reporting.",
+      "lat": 40.7299,
+      "lng": -74.2720,
+      "status": "active",
+      "website": "https://villagegreennj.com",
+      "focusArea": "Civic news and information reporting"
     }
   ],
   "metadata": {
-    "totalGrantees": 73,
-    "totalFunding": 10796392.75,
-    "lastUpdated": "2025-11-06T19:54:55.827Z",
+    "totalGrantees": 75,
+    "totalFunding": 11046392.75,
+    "officialTotalFunding": 11880438,
+    "totalGrants": 135,
+    "lastUpdated": "2025-12-10",
     "dataSource": "Grants-Grid view.csv",
-    "note": "Organizations with business suffix variations (Inc., LLC, etc.) have been consolidated. Project-specific details are preserved."
+    "note": "Organizations with business suffix variations (Inc., LLC, etc.) have been consolidated. Project-specific details are preserved. The officialTotalFunding value from NJCIC impact data is used for display; JSON data needs reconciliation with latest grants."
   }
 }

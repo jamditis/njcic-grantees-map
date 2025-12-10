@@ -6,7 +6,11 @@ let filteredGrantees = [];
 let visibleMarkers = [];
 let currentMarkerIndex = 0;
 
-console.log('App.js loaded - version 12');
+// Hard-coded impact totals (source of truth from NJCIC)
+const IMPACT_TOTAL_FUNDING = 11880438;
+const IMPACT_TOTAL_GRANTS = 135;
+
+console.log('App.js loaded - version 13');
 
 // Initialize the application
 async function init() {
@@ -295,8 +299,15 @@ function updateGranteeCounter() {
 // Update statistics
 function updateStats() {
     const totalGrantees = filteredGrantees.length;
-    const totalFunding = filteredGrantees.reduce((sum, g) => sum + g.amount, 0);
     const activeProjects = filteredGrantees.filter(g => g.status === 'active').length;
+
+    // Check if we're showing all data (no filters applied)
+    const isShowingAll = filteredGrantees.length === allGrantees.length;
+
+    // Use hard-coded impact total when showing all, calculated total when filtered
+    const totalFunding = isShowingAll
+        ? IMPACT_TOTAL_FUNDING
+        : filteredGrantees.reduce((sum, g) => sum + g.amount, 0);
 
     document.getElementById('total-grantees').textContent = totalGrantees;
     document.getElementById('total-funding').textContent = `$${totalFunding.toLocaleString()}`;
