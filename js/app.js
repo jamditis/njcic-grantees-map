@@ -213,11 +213,19 @@ function populateFocusAreaFilter() {
 
 // Create marker icon with initials
 function createCustomIcon(grantee) {
-    const initials = grantee.name.split(' ')
+    // Handle edge cases: empty words, no uppercase, special characters
+    let initials = grantee.name.split(' ')
+        .filter(word => word.length > 0)  // Remove empty words from trailing spaces
         .map(word => word[0])
-        .filter(letter => letter.match(/[A-Z]/))
+        .filter(letter => letter && /[A-Za-z]/.test(letter))  // Allow lowercase too
+        .map(letter => letter.toUpperCase())  // Convert to uppercase
         .slice(0, 2)
         .join('');
+
+    // Fallback if no letters found (e.g., "70and73.com")
+    if (initials.length === 0) {
+        initials = grantee.name.slice(0, 2).toUpperCase();
+    }
 
     const iconHtml = `<div class="custom-marker">${initials}</div>`;
 

@@ -6,6 +6,8 @@
   "scripts": {
     "start": "npx http-server -p 8080 -o",
     "dev": "npx http-server -p 8080 -o",
+    "sync": "node scripts/sync-airtable.js",
+    "sync:coords": "node scripts/populate-airtable-coords.js",
     "process-csv": "node scripts/process-csv.js",
     "update-coords": "node scripts/improved-geocoding.js"
   },
