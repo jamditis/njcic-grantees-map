@@ -115,9 +115,11 @@ Grantees with multiple grants are grouped together and show all their grant deta
 
 ## Important notes
 
-### The impact section is separate
+### The impact section is separate (for now)
 
-The "Impact at a glance" statistics below the map (total invested, stories published, etc.) are **not** pulled from Airtable. These are official NJCIC figures that are updated manually in the website code. Contact Joe if these need to be updated.
+The "Impact at a glance" statistics below the map (total invested, stories published, etc.) are **not** currently pulled from Airtable. These are official NJCIC figures that are updated manually in the website code. Contact Joe if these need to be updated.
+
+**Planned enhancement:** In a future version, the impact section will be connected to Airtable data so these statistics update automatically along with the grantee information.
 
 ### Cancelled/returned grants
 
