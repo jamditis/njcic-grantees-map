@@ -203,10 +203,12 @@ If a grantee name includes a colon (like "Center for Cooperative Media: Spanish 
 ## Contacts
 
 **Technical issues with the map or sync:**
-Joe Amditis - amditisj@montclair.edu
+- Joe Amditis - [amditisj@montclair.edu](mailto:amditisj@montclair.edu)
 
 **Airtable access or grantee data questions:**
-[Add appropriate NJCIC contact]
+
+- Ayinde Merrill - [ayindej@njcivicinfo.org](mailto:ayinde@njcivicinfo.org)
+- Madi McCool - [madi@njcivicinfo.org](mailto:madi@njcivicinfo.org)
 
 ---
 
