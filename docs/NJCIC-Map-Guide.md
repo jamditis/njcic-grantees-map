@@ -88,7 +88,7 @@ If you need changes to appear right away (before the next morning), you can trig
 
 Go to this URL in your browser (bookmark this for easy access):
 ```
-https://njcivicinfo.org/map/sync.php?key=0Ra1wXM8dgwGfeoP
+https://njcivicinfo.org/map/sync.php?key={ASK_JOE_FOR_THE_KEY}
 ```
 
 You'll see a message confirming the sync completed with details like:
