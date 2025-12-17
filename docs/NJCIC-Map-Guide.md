@@ -62,7 +62,7 @@ If you need changes to appear right away (before the next morning), you can trig
 
 ### Option 1: Visit the sync URL
 
-Go to this URL in your browser:
+Go to this URL in your browser (bookmark this for easy access):
 ```
 https://njcivicinfo.org/map/sync.php?key=0Ra1wXM8dgwGfeoP
 ```

@@ -9,9 +9,9 @@ Interactive map displaying grantees of the New Jersey Civic Information Consorti
 
 ## Current statistics (December 2025)
 
-- 75 grantee organizations
-- 99 total grants awarded
-- $10.7+ million in funding
+- 76 grantee organizations
+- 100 total grants awarded
+- $10.8+ million in funding
 - Grant years: 2021-2025
 
 ## Architecture
@@ -114,6 +114,9 @@ npm run sync:coords
 - Added cache-busting to JSON fetch (bypasses CDN caching)
 - Fixed critical PHP reference bug in sync.php (`unset($grantee)` after loop)
 - Added debug mode to sync.php (?debug=1 parameter)
+- Updated meta tags (Open Graph, Twitter, canonical) to use /map/ URL
+- Reduced JSON cache from 1 hour to 5 minutes in .htaccess
+- Added app.js versioning for cache-busting on JS updates
 
 ## Planned enhancements
 

@@ -29,9 +29,9 @@ The map data is powered by Airtable and syncs automatically every morning at 7am
 
 ## Current statistics
 
-- **75 grantee organizations**
-- **99 total grants awarded**
-- **$10.7+ million in funding**
+- **76 grantee organizations**
+- **100 total grants awarded**
+- **$10.8+ million in funding**
 - Grant years: 2021-2025
 
 ---

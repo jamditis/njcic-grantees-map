@@ -1,7 +1,7 @@
 # .htaccess for NJCIC Grantees Map
 
 # Custom 404 error page
-ErrorDocument 404 /grantees/map/404.html
+ErrorDocument 404 /map/404.html
 
 # Enable browser caching
 <IfModule mod_expires.c>
@@ -10,8 +10,8 @@ ErrorDocument 404 /grantees/map/404.html
     # HTML - no cache (always fresh)
     ExpiresByType text/html "access plus 0 seconds"
 
-    # JSON data - cache for 1 hour
-    ExpiresByType application/json "access plus 1 hour"
+    # JSON data - short cache, rely on cache-busting in app.js
+    ExpiresByType application/json "access plus 5 minutes"
 
     # JavaScript - cache for 1 year (use versioning for updates)
     ExpiresByType application/javascript "access plus 1 year"
