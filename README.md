@@ -2,7 +2,7 @@
 
 An interactive map displaying grantees of the New Jersey Civic Information Consortium. The map automatically syncs with Airtable, so NJCIC staff can update grantee information in Airtable and see changes reflected on the map daily.
 
-**Live site:** https://njcivicinfo.org/grantees/map/
+**Live site:** https://njcivicinfo.org/map/
 
 ![screenshot of map](https://i.imgur.com/yoYai54.png)
 

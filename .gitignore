@@ -9,3 +9,9 @@ Thumbs.db
 *.swo
 *~
 nul
+
+# Server-side files with credentials (deploy via FTP only)
+sync.php
+
+# Data exports
+*.csv

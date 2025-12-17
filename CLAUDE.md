@@ -4,7 +4,7 @@
 
 Interactive map displaying grantees of the New Jersey Civic Information Consortium. The map automatically syncs with Airtable, allowing NJCIC staff to update grantee information in Airtable and see changes reflected on the map daily.
 
-**Live site:** https://njcivicinfo.org/grantees/map/
+**Live site:** https://njcivicinfo.org/map/
 **GitHub repo:** https://github.com/jamditis/njcic-grantees-map
 
 ## Current statistics (December 2025)
@@ -76,8 +76,8 @@ Airtable → sync.php (on server) → grantees.json → Map displays data
 ## Server deployment
 
 **Hosting:** Nestify (WordPress)
-**Location:** /public_html/grantees/map/
-**Sync URL:** https://njcivicinfo.org/grantees/map/sync.php?key=[SECRET_KEY]
+**Location:** /public_html/map/
+**Sync URL:** https://njcivicinfo.org/map/sync.php?key=[SECRET_KEY]
 
 The sync.php file contains the Airtable PAT and is deployed directly to the server via FTP (not committed to GitHub for security).
 

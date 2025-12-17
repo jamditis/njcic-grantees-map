@@ -4,7 +4,7 @@
 
 The NJCIC Grantees Map is an interactive map that displays all Consortium grantees across New Jersey. It lives at:
 
-**https://njcivicinfo.org/grantees/map/**
+**https://njcivicinfo.org/map/**
 
 The map gets its data directly from the Airtable base "Grants to date: NJ Civic Info Consortium." When you update information in Airtable, those changes automatically appear on the map.
 
@@ -64,7 +64,7 @@ If you need changes to appear right away (before the next morning), you can trig
 
 Go to this URL in your browser:
 ```
-https://njcivicinfo.org/grantees/map/sync.php?key=0Ra1wXM8dgwGfeoP
+https://njcivicinfo.org/map/sync.php?key=0Ra1wXM8dgwGfeoP
 ```
 
 You'll see a message confirming the sync completed with details like:
@@ -171,7 +171,7 @@ If a grantee name includes a colon (like "Center for Cooperative Media: Spanish 
 | Remove grantee | Check "Returned/Cancelled grant?" in Airtable |
 | Get coordinates | Use latlong.net to look up the city |
 | Force immediate sync | Visit sync.php URL or use GitHub Actions |
-| View the map | https://njcivicinfo.org/grantees/map/ |
+| View the map | https://njcivicinfo.org/map/ |
 
 ---
 
