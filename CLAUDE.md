@@ -110,6 +110,10 @@ npm run sync:coords
 - Created comprehensive staff documentation
 - Fixed createCustomIcon edge cases (trailing spaces, no uppercase letters)
 - Resolved WordPress security issues (moved map outside wp-content)
+- Changed URL from /grantees/map to /map
+- Added cache-busting to JSON fetch (bypasses CDN caching)
+- Fixed critical PHP reference bug in sync.php (`unset($grantee)` after loop)
+- Added debug mode to sync.php (?debug=1 parameter)
 
 ## Planned enhancements
 
