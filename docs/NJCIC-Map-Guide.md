@@ -8,6 +8,8 @@ The NJCIC Grantees Map is an interactive map that displays all Consortium grante
 
 The map gets its data directly from the Airtable base "Grants to date: NJ Civic Info Consortium." When you update information in Airtable, those changes automatically appear on the map.
 
+**Important:** The map pulls data from the **"MAP VIEW"** view in Airtable (starred for easy access). Make sure you're working in this view when editing grantee information.
+
 ---
 
 ## How to update grantee information
@@ -15,7 +17,8 @@ The map gets its data directly from the Airtable base "Grants to date: NJ Civic 
 ### Adding a new grantee
 
 1. Open the Airtable base "Grants to date: NJ Civic Info Consortium"
-2. Add a new row with the grantee's information:
+2. Go to the **"MAP VIEW"** view (starred for easy access)
+3. Add a new row with the grantee's information:
    - **Grantee** - Organization name
    - **Grant purpose** - Description of what the grant funds
    - **Year(s) granted** - Select the year(s)
@@ -26,6 +29,7 @@ The map gets its data directly from the Airtable base "Grants to date: NJ Civic 
    - **Lat** - Latitude coordinate (see below)
    - **Long** - Longitude coordinate (see below)
    - **City** - City name
+   - **New org?** - Check this to highlight them as a new grantee (see below)
 
 ### Getting coordinates for new grantees
 
@@ -45,6 +49,20 @@ Simply edit the fields in Airtable. Changes to names, amounts, descriptions, web
 ### Removing a grantee
 
 To remove a grantee from the map, check the **"Returned/Cancelled grant?"** checkbox in Airtable. The grantee will no longer appear on the map but the record stays in Airtable for your records.
+
+### Highlighting new grantees
+
+To highlight a grantee as "new" on the map:
+
+1. Check the **"New org?"** checkbox in Airtable
+2. Run a sync (or wait for the daily 7am sync)
+
+New grantees will appear with:
+- An **orange marker** (instead of teal) with a pulsing glow effect
+- A **"NEW" badge** on the marker
+- A **"New grantee"** label in the tooltip and popup
+
+*Tip: Uncheck "New org?" after a few months when you no longer want to highlight them as new.*
 
 ---
 
@@ -166,9 +184,10 @@ If a grantee name includes a colon (like "Center for Cooperative Media: Spanish 
 
 | Task | How to do it |
 |------|--------------|
-| Add new grantee | Add row in Airtable with all fields filled |
+| Add new grantee | Add row in Airtable (MAP VIEW) with all fields filled |
 | Edit grantee info | Edit the row directly in Airtable |
 | Remove grantee | Check "Returned/Cancelled grant?" in Airtable |
+| Highlight as new | Check "New org?" in Airtable |
 | Get coordinates | Use latlong.net to look up the city |
 | Force immediate sync | Visit sync.php URL or use GitHub Actions |
 | View the map | https://njcivicinfo.org/map/ |

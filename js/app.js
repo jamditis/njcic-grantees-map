@@ -228,7 +228,10 @@ function createCustomIcon(grantee) {
         initials = grantee.name.slice(0, 2).toUpperCase();
     }
 
-    const iconHtml = `<div class="custom-marker">${initials}</div>`;
+    // Add "NEW" badge for new organizations
+    const newBadge = grantee.isNewOrg ? '<span class="new-org-badge">NEW</span>' : '';
+    const newClass = grantee.isNewOrg ? ' new-org' : '';
+    const iconHtml = `<div class="custom-marker${newClass}">${initials}${newBadge}</div>`;
 
     return L.divIcon({
         html: iconHtml,
@@ -240,8 +243,9 @@ function createCustomIcon(grantee) {
 
 // Create tooltip content
 function createTooltipContent(grantee) {
+    const newBadge = grantee.isNewOrg ? '<span class="tooltip-new-badge">New grantee!</span>' : '';
     return `
-        <div class="tooltip-title">${grantee.name}</div>
+        <div class="tooltip-title">${grantee.name}${newBadge}</div>
         <div class="tooltip-info">${grantee.county}</div>
         <div class="tooltip-info">$${grantee.amount.toLocaleString()}</div>
     `;
@@ -444,7 +448,13 @@ function goHome() {
 function openModal(grantee) {
     const yearsText = grantee.years.join(', ');
 
-    document.getElementById('modal-title').textContent = grantee.name;
+    // Set modal title with optional "New grantee" badge
+    const modalTitle = document.getElementById('modal-title');
+    if (grantee.isNewOrg) {
+        modalTitle.innerHTML = `${grantee.name} <span class="modal-new-badge">New grantee</span>`;
+    } else {
+        modalTitle.textContent = grantee.name;
+    }
     document.getElementById('modal-location').textContent = grantee.city ? `${grantee.city}, ${grantee.county}` : grantee.county;
 
     // Handle multiple grants if present

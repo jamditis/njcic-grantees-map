@@ -67,6 +67,9 @@ Airtable → sync.php (on server) → grantees.json → Map displays data
 - Grantee website
 - Lat, Long, City (coordinates)
 - Returned/Cancelled grant? (checkbox to exclude from map)
+- New org? (checkbox to highlight with orange marker and "NEW" badge)
+
+**View:** MAP VIEW (starred for easy access)
 
 **Field IDs for coordinates:**
 - Lat: fldXBmRZZoCXp5M68
@@ -117,6 +120,7 @@ npm run sync:coords
 - Updated meta tags (Open Graph, Twitter, canonical) to use /map/ URL
 - Reduced JSON cache from 1 hour to 5 minutes in .htaccess
 - Added app.js versioning for cache-busting on JS updates
+- Added "New org?" feature to highlight new grantees with orange markers and badges
 
 ## Planned enhancements
 

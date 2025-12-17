@@ -221,10 +221,65 @@
             font-size: 0.9rem;
             transition: transform 0.3s ease;
             cursor: pointer;
+            position: relative;
         }
 
         .custom-marker:hover {
             transform: scale(1.15);
+        }
+
+        /* New organization marker styling */
+        .custom-marker.new-org {
+            background: linear-gradient(135deg, #f34213 0%, #183642 100%);
+            box-shadow: 0 4px 12px rgba(243, 66, 19, 0.4);
+            animation: pulse-new 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-new {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(243, 66, 19, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(243, 66, 19, 0.7);
+            }
+        }
+
+        .new-org-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #f34213;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: bold;
+            padding: 2px 4px;
+            border-radius: 4px;
+            line-height: 1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tooltip-new-badge {
+            display: block;
+            background: #f34213;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 4px;
+            width: fit-content;
+        }
+
+        .modal-new-badge {
+            display: inline-block;
+            background: #f34213;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-left: 8px;
+            vertical-align: middle;
         }
 
         /* Modal styling */
@@ -659,6 +714,13 @@
                         <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white mr-2" style="background: linear-gradient(135deg, #2dc8d2 0%, #183642 100%); border: 2px solid white;">CC</div>
                         <span class="text-gray-700 text-sm">Single grantee</span>
                     </div>
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white mr-2 relative" style="background: linear-gradient(135deg, #f34213 0%, #183642 100%); border: 2px solid white; box-shadow: 0 0 8px rgba(243, 66, 19, 0.5);">
+                            <span>NW</span>
+                            <span class="absolute -top-1 -right-1 bg-[#f34213] text-white text-[0.4rem] font-bold px-1 rounded">NEW</span>
+                        </div>
+                        <span class="text-gray-700 text-sm">New grantee</span>
+                    </div>
                 </div>
 
                 <!-- Clusters -->
@@ -970,6 +1032,6 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
     <!-- App JS -->
-    <script src="js/app.js?v=20251217b"></script>
+    <script src="js/app.js?v=20251217c"></script>
 </body>
 </html>
