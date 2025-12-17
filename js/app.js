@@ -10,13 +10,14 @@ let currentMarkerIndex = 0;
 const IMPACT_TOTAL_FUNDING = 11880438;
 const IMPACT_TOTAL_GRANTS = 135;
 
-console.log('App.js loaded - version 13');
+console.log('App.js loaded - version 14');
 
 // Initialize the application
 async function init() {
     try {
-        // Load grantee data
-        const response = await fetch('data/grantees.json');
+        // Load grantee data (cache-bust to ensure fresh data after sync)
+        const cacheBust = new Date().getTime();
+        const response = await fetch(`data/grantees.json?v=${cacheBust}`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
