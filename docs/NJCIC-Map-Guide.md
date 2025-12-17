@@ -1,5 +1,7 @@
 # NJCIC Grantees Map - Staff guide
 
+![NJCIC grantee map](https://i.imgur.com/2lU1LGP.png)
+
 ## What is this?
 
 The NJCIC Grantees Map is an interactive map that displays all Consortium grantees across New Jersey. It lives at:
@@ -9,6 +11,8 @@ The NJCIC Grantees Map is an interactive map that displays all Consortium grante
 The map gets its data directly from the Airtable base "Grants to date: NJ Civic Info Consortium." When you update information in Airtable, those changes automatically appear on the map.
 
 **Important:** The map pulls data from the **"MAP VIEW"** view in Airtable (starred for easy access). Make sure you're working in this view when editing grantee information.
+
+![NJCIC grantee airtable base](https://i.imgur.com/cFZxewF.png)
 
 ---
 
@@ -30,6 +34,8 @@ The map gets its data directly from the Airtable base "Grants to date: NJ Civic 
    - **Long** - Longitude coordinate (see below)
    - **City** - City name
    - **New org?** - Check this to highlight them as a new grantee (see below)
+
+     ![New grantee map badge](https://i.imgur.com/cs29Rze.png)
 
 ### Getting coordinates for new grantees
 
