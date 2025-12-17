@@ -1,199 +1,148 @@
 # NJ Civic Information Consortium grantees map
 
-An interactive web-based map visualizing grantees of the New Jersey Civic Information Consortium. This project displays journalism and civic engagement projects across New Jersey using CARTO Voyager tiles and Leaflet.js.
+An interactive map displaying grantees of the New Jersey Civic Information Consortium. The map automatically syncs with Airtable, so NJCIC staff can update grantee information in Airtable and see changes reflected on the map daily.
+
+**Live site:** https://njcivicinfo.org/grantees/map/
 
 ![screenshot of map](https://i.imgur.com/yoYai54.png)
 
 ## About the project
 
-The New Jersey Civic Information Consortium supports local journalism, civic engagement, and information equity projects throughout New Jersey. This interactive map helps visualize the geographic distribution of grants, funding amounts, and project details.
+The New Jersey Civic Information Consortium supports local journalism, civic engagement, and information equity projects throughout New Jersey. This interactive map visualizes the geographic distribution of grants, funding amounts, and project details across the state.
+
+The map data is powered by Airtable and syncs automatically every morning at 7am ET.
 
 ![impact of njcic at a glance](https://i.imgur.com/AkmNypD.png)
 
 ## Features
 
-- Interactive map powered by CARTO Voyager tiles and Leaflet.js
+- Interactive map powered by Leaflet.js and CARTO Voyager tiles
+- **Live sync with Airtable** - Update grantees in Airtable, see changes on the map
 - Custom markers showing organization initials
-- Marker clustering with hover-to-expand functionality for better performance
-- Filter grantees by year (2021-2025), county, focus area, and project status
-- Detailed modal popups showing grant information, descriptions, and website links
-- Support for organizations with multiple grants showing individual project details
-- Sequential navigation through all grantees with prev/next buttons
-- Click-and-drag panning and pinch-to-zoom on mobile
-- Statistics dashboard showing total grantees, funding, and active projects
-- Comprehensive map legend explaining markers, clusters, and status indicators
+- Marker clustering with hover-to-expand functionality
+- Filter by year (2021-2025), county, focus area, and status
+- Detailed popups showing grant information, descriptions, and website links
+- Support for organizations with multiple grants
+- Sequential navigation through grantees with prev/next buttons
+- Mobile-friendly with touch gestures
 - Status indicators: Active (2024+) and Completed (pre-2024)
-- Responsive design optimized for mobile and desktop viewing
-- NJCIC branding with logo and mission statement
 
-## Getting started
+## Current statistics
+
+- **75 grantee organizations**
+- **99 total grants awarded**
+- **$10.7+ million in funding**
+- Grant years: 2021-2025
+
+---
+
+## How the Airtable sync works
+
+```
+Airtable → Automatic sync (7am ET daily) → Map updates
+```
+
+1. **NJCIC staff updates Airtable** - Add, edit, or remove grantees
+2. **Sync runs automatically** - Every day at 7am ET via GitHub Actions
+3. **Map displays new data** - Visitors see updated information
+
+### Manual sync
+
+To update the map immediately (without waiting for the daily sync):
+
+**Option 1:** Visit the sync URL directly:
+```
+https://njcivicinfo.org/grantees/map/sync.php?key=[SECRET_KEY]
+```
+
+**Option 2:** Trigger via GitHub Actions:
+1. Go to the Actions tab in this repo
+2. Click "Sync Airtable Data"
+3. Click "Run workflow"
+
+---
+
+## For NJCIC staff
+
+See the full staff guide: [docs/NJCIC-Map-Guide.md](docs/NJCIC-Map-Guide.md)
+
+### Quick reference
+
+| Task | How to do it |
+|------|--------------|
+| Add new grantee | Add row in Airtable with all fields |
+| Edit grantee | Edit the row in Airtable |
+| Remove grantee | Check "Returned/Cancelled grant?" in Airtable |
+| Get coordinates | Use [latlong.net](https://www.latlong.net/) |
+| Force immediate sync | Visit sync URL or use GitHub Actions |
+
+---
+
+## Development
 
 ### Prerequisites
 
-- Node.js (v14 or higher) for running the development server
-- Modern web browser with JavaScript enabled
+- Node.js (v14 or higher)
+- Modern web browser
 
-### Installation
+### Local development
 
-1. Clone or download this repository
-
-2. Install dependencies:
 ```bash
+# Clone the repo
+git clone https://github.com/jamditis/njcic-grantees-map.git
+cd njcic-grantees-map
+
+# Install dependencies
 npm install
-```
 
-### Running the application
-
-Start the development server:
-```bash
+# Start local server
 npm start
 ```
 
-This will start a local HTTP server on port 8080 and open the application in your default browser at `http://localhost:8080`.
+The app will open at `http://localhost:8080`
 
-Alternatively, you can use any static file server:
-```bash
-npx http-server -p 8080
-```
-
-Or simply open `index.html` directly in a web browser (some browsers may have CORS restrictions with local file access).
-
-## Project structure
+### Project structure
 
 ```
-njcic-map/
+njcic-grantees-map/
 ├── data/
-│   ├── grantees.json          # Grantee data with locations and details
-│   └── Grants-Grid view.csv   # Source data file
+│   └── grantees.json           # Grantee data (synced from Airtable)
 ├── js/
-│   └── app.js                 # Main application logic
+│   └── app.js                  # Main application logic
 ├── scripts/
-│   ├── process-csv.js         # CSV to JSON processing with geocoding
-│   ├── consolidate-suffix-duplicates.js  # Consolidate business name variations
-│   ├── smart-consolidate.js   # Consolidate projects under parent orgs
-│   └── improved-geocoding.js  # Geocoding corrections for specific locations
-├── styles/
-│   └── main.css               # Styles for the application
+│   ├── sync-airtable.js        # Node.js sync script (local use)
+│   └── populate-airtable-coords.js  # Push coordinates to Airtable
 ├── docs/
-│   └── CHANGELOG.md           # Detailed changelog of updates
-├── index.html                 # Main HTML file
-├── package.json               # Project metadata and dependencies
-└── README.md                  # This file
+│   └── NJCIC-Map-Guide.md      # Staff guide
+├── .github/
+│   └── workflows/
+│       └── sync-airtable.yml   # GitHub Actions daily sync
+├── sync.php                    # PHP sync script (runs on server)
+├── index.html                  # Main HTML file
+└── README.md
 ```
 
-## Data structure
+### Running the sync locally
 
-The `data/grantees.json` file contains an array of grantee objects with the following structure:
+```bash
+# Set environment variable
+export AIRTABLE_PAT=your_pat_here
 
-**Single grant organization:**
-```json
-{
-  "name": "Organization Name",
-  "county": "County Name",
-  "city": "City Name (optional)",
-  "years": ["2021", "2022"],
-  "amount": 100000,
-  "description": "Project description",
-  "lat": 40.1234,
-  "lng": -74.5678,
-  "status": "active|completed",
-  "website": "https://example.org",
-  "focusArea": "Civic news and information reporting"
-}
+# Run sync
+npm run sync
 ```
 
-**Multiple grants organization:**
-```json
-{
-  "name": "Organization Name",
-  "county": "County Name",
-  "city": "City Name (optional)",
-  "years": ["2021", "2022", "2024"],
-  "amount": 250000,
-  "hasMultipleGrants": true,
-  "grantCount": 2,
-  "totalAmount": 250000,
-  "grants": [
-    {
-      "id": 1,
-      "projectName": "Specific Project Name",
-      "years": ["2021"],
-      "amount": 100000,
-      "description": "Project-specific description",
-      "focusArea": "Focus area",
-      "status": "completed"
-    },
-    {
-      "id": 2,
-      "projectName": "Another Project",
-      "years": ["2024"],
-      "amount": 150000,
-      "description": "Another description",
-      "focusArea": "Focus area",
-      "status": "active"
-    }
-  ],
-  "lat": 40.1234,
-  "lng": -74.5678,
-  "website": "https://example.org"
-}
-```
+---
 
-## Technologies used
+## Technologies
 
-- **Leaflet.js v1.9.4** - Interactive mapping library
-- **CARTO Voyager** - Map tile provider
-- **Leaflet.markercluster** - Marker clustering with hover-to-expand functionality
-- **Tailwind CSS** - Utility-first CSS framework (via CDN)
-- **Vanilla JavaScript (ES6)** - No framework dependencies
-- **Custom CSS** - Additional responsive styling and animations
-
-## Updating grantee data
-
-### Automated process (recommended)
-
-To update the map with new grants from the CSV source:
-
-1. Edit `data/Grants-Grid view.csv` with new grant information
-2. Run the processing script:
-   ```bash
-   npm run process-csv
-   ```
-3. The script will:
-   - Parse the CSV file
-   - Filter out cancelled/returned grants
-   - Geocode locations to lat/lng coordinates
-   - Generate updated `data/grantees.json`
-4. (Optional) Run consolidation scripts if needed:
-   ```bash
-   node scripts/consolidate-suffix-duplicates.js
-   node scripts/smart-consolidate.js
-   ```
-5. Refresh the browser to see changes
-
-### Manual process
-
-To manually edit the grantee data:
-
-1. Edit `data/grantees.json` directly
-2. Add new grantee objects with required fields (see Data structure above)
-3. Use https://www.latlong.net/ or similar to get accurate coordinates
-4. Refresh the browser to see changes
-
-### Current statistics
-
-- 73 unique organizations
-- 19 organizations with multiple grants
-- Total funding: $10,796,392.75
-- Grant years: 2021-2025
-- Status: Active (2024+) or Completed (pre-2024)
-
-## Browser support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- **Leaflet.js** - Interactive mapping
+- **CARTO Voyager** - Map tiles
+- **Leaflet.markercluster** - Marker clustering
+- **Tailwind CSS** - Styling (via CDN)
+- **Airtable API** - Data source
+- **GitHub Actions** - Automated sync
+- **PHP** - Server-side sync script
 
 ## License
 
