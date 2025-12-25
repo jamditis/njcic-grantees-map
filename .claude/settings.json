@@ -1,0 +1,29 @@
+{
+  "project": {
+    "name": "NJCIC Grantees Map",
+    "type": "web-application",
+    "language": "javascript",
+    "framework": "vanilla-js"
+  },
+  "skills": {
+    "directory": ".claude/skills",
+    "autoload": false
+  },
+  "codeStyle": {
+    "indentation": "spaces",
+    "indentSize": 4,
+    "quotes": "single",
+    "semicolons": true
+  },
+  "testing": {
+    "framework": "vitest",
+    "coverage": {
+      "target": 80
+    }
+  },
+  "deployment": {
+    "host": "Nestify",
+    "path": "/public_html/map/",
+    "cicd": "github-actions"
+  }
+}
