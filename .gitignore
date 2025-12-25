@@ -3,7 +3,10 @@ node_modules/
 *.log
 .env
 .vscode/
-.claude/
+# Claude Code session data (but allow skills for project knowledge)
+.claude/*
+!.claude/skills/
+!.claude/settings.json
 Thumbs.db
 *.swp
 *.swo
