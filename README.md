@@ -1,5 +1,9 @@
 # NJ Civic Information Consortium grantees map
 
+[![GitHub last commit](https://img.shields.io/github/last-commit/jamditis/njcic-grantees-map)](https://github.com/jamditis/njcic-grantees-map/commits)
+[![GitHub issues](https://img.shields.io/github/issues/jamditis/njcic-grantees-map)](https://github.com/jamditis/njcic-grantees-map/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/jamditis/njcic-grantees-map)](https://github.com/jamditis/njcic-grantees-map/pulls)
+
 An interactive map displaying grantees of the New Jersey Civic Information Consortium. The map automatically syncs with Airtable, so NJCIC staff can update grantee information in Airtable and see changes reflected on the map daily.
 
 **Live site:** https://njcivicinfo.org/map/
