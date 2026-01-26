@@ -13,17 +13,22 @@ Detailed timestamped changelog of all updates, features, and bug fixes. Organize
 - File modifications
 - Statistics
 
+### NJCIC-Map-Guide.md
+Staff guide for NJCIC team members including:
+- How to update grantee information in Airtable
+- Adding new grantees with coordinates
+- Triggering manual syncs
+- Troubleshooting common issues
+
 ### ../CLAUDE.md
 Comprehensive development guide for Claude Code including:
 - Project overview and architecture
-- Technology stack details
+- Airtable sync configuration
 - Development commands
 - Data management procedures
 - Key functionality explanations
-- Recent updates and improvements (2025-11-06 session)
 - Technical challenges and solutions
 - Code locations for key features
-- Next session recommendations
 
 ## Quick links
 
@@ -33,8 +38,8 @@ Comprehensive development guide for Claude Code including:
 - See `../README.md` for project overview (if exists)
 
 **For content editors:**
-- See "Data management" section in `CLAUDE.md`
-- See "Updating the map with new data" section for CSV workflow
+- See `NJCIC-Map-Guide.md` for staff instructions
+- Data is managed through Airtable and syncs automatically daily at 7am ET
 
 **For troubleshooting:**
 - See "Technical challenges and solutions" in `CLAUDE.md`
@@ -45,8 +50,9 @@ Comprehensive development guide for Claude Code including:
 
 - `index.html` - Main application structure
 - `js/app.js` - Application logic and interactivity
-- `data/grantees.json` - Grantee data (generated from CSV)
-- `scripts/` - Data processing and consolidation scripts
+- `data/grantees.json` - Grantee data (synced from Airtable)
+- `scripts/` - Local sync and data processing scripts
+- `.github/workflows/sync-airtable.yml` - Daily automated sync
 
 ## Getting started
 
@@ -55,13 +61,14 @@ Comprehensive development guide for Claude Code including:
 3. Access at: http://localhost:8080
 4. See console for any errors
 
-## Recent updates (2025-11-06)
+## Recent updates (December 2025)
 
-Major session focused on:
-- Map legend and custom zoom controls
-- Mobile responsiveness improvements
-- Data consolidation (HopeLoft entries)
-- Z-index fixes for proper layering
-- Zoom button functionality debugging
+Major improvements:
+- Implemented live Airtable sync (replaces hardcoded/CSV data)
+- Added GitHub Actions workflow for daily automated sync at 7am ET
+- Created PHP sync script for server-side execution
+- Added "New org?" feature to highlight new grantees with orange markers
+- Accessibility enhancements to CSS
+- Comprehensive staff documentation in NJCIC-Map-Guide.md
 
-See CHANGELOG.md for complete details.
+See CHANGELOG.md for complete history.

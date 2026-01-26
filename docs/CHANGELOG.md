@@ -1,5 +1,64 @@
 # NJCIC Map Changelog
 
+## December 2025 - Live Airtable sync and automation
+
+### Major features
+
+**Live Airtable sync**
+- Implemented server-side sync.php script that pulls data from Airtable API
+- Map now automatically syncs with Airtable daily at 7am ET via GitHub Actions
+- NJCIC staff can update grantees in Airtable and see changes reflected on map
+- Added cache-busting to JSON fetch (bypasses CDN caching)
+- Reduced JSON cache from 1 hour to 5 minutes in .htaccess
+
+**"New org?" highlighting**
+- Added feature to highlight new grantees with orange markers and pulsing glow
+- "NEW" badge appears on marker
+- "New grantee" label in tooltip and popup
+- Controlled by "New org?" checkbox in Airtable
+
+**GitHub Actions automation**
+- Created `.github/workflows/sync-airtable.yml` for daily sync
+- Triggers sync URL at 7am ET every day
+- Can also be triggered manually from Actions tab
+
+### Bug fixes
+
+- Fixed critical PHP reference bug in sync.php (`unset($grantee)` after loop)
+- Added debug mode to sync.php (?debug=1 parameter)
+- Fixed createCustomIcon edge cases (trailing spaces, no uppercase letters)
+- Resolved WordPress security issues (moved map outside wp-content)
+
+### Infrastructure changes
+
+- Changed URL from /grantees/map to /map
+- Updated meta tags (Open Graph, Twitter, canonical) to use /map/ URL
+- Added app.js versioning for cache-busting on JS updates
+
+### Documentation
+
+- Created comprehensive staff guide (docs/NJCIC-Map-Guide.md)
+- Updated CLAUDE.md with Airtable configuration details
+- Added multi-machine workflow section to CLAUDE.md
+
+### Files modified
+
+- `index.html` - Updated meta tags, added JS versioning
+- `js/app.js` - Added new org highlighting, cache-busting
+- `data/grantees.json` - Now synced from Airtable
+- `.github/workflows/sync-airtable.yml` - New file
+- `docs/NJCIC-Map-Guide.md` - New file
+- `CLAUDE.md` - Updated with Airtable config
+
+### Current statistics (December 2025)
+
+- Grantee organizations: 75
+- Total grants: 99
+- Total funding: $10.8+ million
+- Grant years: 2021-2025
+
+---
+
 ## 2025-11-06 (continued) - UI refinements and feature removal
 
 ### Removed features
