@@ -3,8 +3,27 @@
 User-agent: *
 Allow: /
 
+# AI search bots: welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Sitemap location
-Sitemap: https://njcivicinfo.org/grantees/map/sitemap.xml
+Sitemap: https://njcivicinfo.org/map/sitemap.xml
 
 # Crawl-delay (optional, be kind to servers)
 Crawl-delay: 1

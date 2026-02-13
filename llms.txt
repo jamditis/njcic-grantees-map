@@ -1,0 +1,37 @@
+# NJ Civic Information Consortium — Grantees Map
+
+> Interactive map of all New Jersey Civic Information Consortium grantees, showing journalism and civic engagement projects funded across New Jersey since 2021.
+
+## Overview
+
+- URL: https://njcivicinfo.org/map/
+- Maintained by: Center for Cooperative Media, Montclair State University
+- Data source: NJCIC grant records (synced daily from Airtable)
+- Grantees: 75 organizations
+- Total grants: 99
+- Total funding: $10.8+ million
+- Grant years: 2021-2025
+
+## What is the NJ Civic Information Consortium?
+
+The New Jersey Civic Information Consortium is a publicly funded organization that supports local journalism, civic engagement, and information equity initiatives throughout New Jersey. It was established by state law in 2018 and is the first state-funded effort of its kind in the United States. The Consortium awards grants to organizations working to meet the information needs of New Jersey communities.
+
+## Map features
+
+- Interactive Leaflet.js map with clustered markers
+- Filter by grant year, county, focus area, and project status
+- Detailed popups with grant information, project descriptions, and organization links
+- Mobile-friendly responsive design
+
+## Data
+
+Grant data is updated daily at 7am ET via automated sync with NJCIC's Airtable records. Each grantee record includes organization name, project title, grant amount, county, focus area, project description, and website.
+
+## Pages
+
+- Map: https://njcivicinfo.org/map/
+
+## Related
+
+- NJ Civic Information Consortium: https://njcivicinfo.org
+- Center for Cooperative Media: https://centerforcooperativemedia.org
