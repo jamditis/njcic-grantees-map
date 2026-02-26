@@ -33,10 +33,12 @@ The map data is powered by Airtable and syncs automatically every morning at 7am
 
 ## Current statistics
 
-- **76 grantee organizations**
-- **100 total grants awarded**
+- **75 grantee organizations**
+- **99 total grants awarded**
 - **$10.8+ million in funding**
 - Grant years: 2021-2025
+
+*Statistics updated December 2025. Data synced from Airtable.*
 
 ---
 
@@ -56,7 +58,7 @@ To update the map immediately (without waiting for the daily sync):
 
 **Option 1:** Visit the sync URL directly:
 ```
-https://njcivicinfo.org/grantees/map/sync.php?key=[SECRET_KEY]
+https://njcivicinfo.org/map/sync.php?key=[SECRET_KEY]
 ```
 
 **Option 2:** Trigger via GitHub Actions:
@@ -121,9 +123,11 @@ njcic-grantees-map/
 ├── .github/
 │   └── workflows/
 │       └── sync-airtable.yml   # GitHub Actions daily sync
-├── sync.php                    # PHP sync script (runs on server)
 ├── index.html                  # Main HTML file
 └── README.md
+
+# Note: sync.php is deployed directly to the server (not in this repo)
+# to keep the Airtable API key secure.
 ```
 
 ### Running the sync locally

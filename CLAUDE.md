@@ -9,9 +9,9 @@ Interactive map displaying grantees of the New Jersey Civic Information Consorti
 
 ## Current statistics (December 2025)
 
-- 76 grantee organizations
-- 100 total grants awarded
-- $10.8+ million in funding
+- 75 grantee organizations
+- 99 total grants awarded
+- $12+ million in funding
 - Grant years: 2021-2025
 
 ## Architecture
