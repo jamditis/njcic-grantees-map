@@ -18,3 +18,7 @@ sync.php
 
 # Data exports
 *.csv
+
+# Windows artifacts
+desktop.ini
+nul
