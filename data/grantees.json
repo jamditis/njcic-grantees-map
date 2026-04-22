@@ -10,7 +10,7 @@
       "amount": 10000,
       "lat": 39.8989,
       "lng": -74.9275,
-      "status": "active",
+      "status": "completed",
       "website": "https://www.70and73.com",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
@@ -29,7 +29,7 @@
       "status": "completed",
       "website": "https://asburyparkreporter.com",
       "focusArea": "Civic engagement in NJ communities",
-      "description": "Received funding to create an incubator for emerging community reporters and local media makers. The work the community reporters produce over the course of the training sessions — including news articles, news broadcasts for radio, news videos and documentary short subjects, podcasts, and social media posts — is published and disseminated through a website and a network of local media partners. The project has focused on live streaming city council and board of education meetings in Asbury Park.\n"
+      "description": "Received funding to create an incubator for emerging community reporters and local media makers. The work the community reporters produce over the course of the training sessions — including news articles, news broadcasts for radio, news videos and documentary short subjects, podcasts, and social media posts — is published and disseminated through a website and a network of local media partners. The project has focused on live streaming city council and board of education meetings in Asbury Park."
     },
     {
       "name": "Atlantic City Focus",
@@ -68,7 +68,7 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. \n",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         }
       ],
       "totalAmount": 310000,
@@ -102,30 +102,48 @@
       "years": [
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
-      "amount": 260000,
+      "amount": 330000,
       "lat": 40.2171,
       "lng": -74.7429,
       "status": "active",
       "website": "https://www.blackinjersey.com",
-      "focusArea": "Civic news and information reporting",
-      "description": "Received funding to support the launch of Black in Jersey as a reliable news and information hub serving New Jersey’s Black communities, and also to provide support for the organization’s first statehouse and local government reporting cohort, and to launch its incubator program featuring Millennial and Generation Z-led news services — including the Hotspot Podcast. \n"
-    },
-    {
-      "name": "Black In Jersey",
-      "county": "Statewide",
-      "city": "Trenton",
-      "years": [
-        "2024"
+      "focusArea": "Civic news and information reporting; Blue Engine Tech & Sustainability Accelerator Grant",
+      "description": "This organization received 2 grants totaling $330,000.",
+      "grants": [
+        {
+          "id": 1,
+          "years": [
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "amount": 320000,
+          "description": "Received funding to support the launch of Black in Jersey as a reliable news and information hub serving New Jersey’s Black communities, and also to provide support for the organization’s first statehouse and local government reporting cohort, and to launch its incubator program featuring Millennial and Generation Z-led news services — including the Hotspot Podcast. Grant funding currently supports organizational sustainability and leadership development.\n",
+          "focusArea": "Civic news and information reporting",
+          "status": "active"
+        },
+        {
+          "id": 2,
+          "years": [
+            "2024"
+          ],
+          "amount": 10000,
+          "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
+          "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
+          "status": "completed"
+        }
       ],
-      "amount": 10000,
-      "lat": 40.2171,
-      "lng": -74.7429,
-      "status": "active",
-      "website": "www.blackinjersey.com",
-      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-      "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
+      "totalAmount": 330000,
+      "focusAreas": [
+        "Civic news and information reporting",
+        "Blue Engine Tech & Sustainability Accelerator Grant"
+      ],
+      "hasMultipleGrants": true,
+      "grantCount": 2
     },
     {
       "name": "CAIR NJ",
@@ -140,7 +158,7 @@
       "status": "active",
       "website": "https://cair-nj.org/?gad_source=1&gad_campaignid=22804431776&gbraid=0AAAAAo5RPHDNS5X6Dl1Z8PSI93YhC8_U1&gclid=Cj0KCQjw58PGBhCkARIsADbDilzICFHnaVE2mDoofyQk0b2FnGoZHh_xrtLvwJr8NK8iashAzmX52UYaAn9dEALw_wcB",
       "focusArea": "Civic engagement in NJ communities",
-      "description": "Received funding To support the launch of a multimedia civic news platform created by and for Muslim-Americans, including staff hiring, student internships, and community engagement."
+      "description": "Received funding to support the launch of a multimedia civic news platform created by and for Muslim-Americans, including staff hiring, student internships, and community engagement."
     },
     {
       "name": "Camden Fireworks",
@@ -176,46 +194,35 @@
     },
     {
       "name": "Center for Cooperative Media",
-      "county": "Statewide",
+      "county": "South Jersey",
       "city": "Montclair",
       "years": [
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
-      "amount": 676063,
-      "lat": 40.8647,
-      "lng": -74.1975,
+      "amount": 820108.88,
+      "lat": 40.8259,
+      "lng": -74.209,
       "status": "active",
       "website": "https://centerforcooperativemedia.org",
-      "focusArea": "Civic news and information reporting; Civic engagement in NJ communities",
-      "description": "This organization received 4 grants totaling $676,063.",
+      "focusArea": "Civic engagement in NJ communities; Civic news and information reporting",
+      "description": "This organization received 4 grants totaling $820,108.88.",
       "grants": [
         {
           "id": 1,
           "years": [
-            "2022",
             "2023",
             "2024"
           ],
-          "amount": 175000,
-          "description": "Received funding to launch the NJ News Commons Spanish Translation Service, partnering with the largest Spanish-language and mainstream media outlets in the state to translate statewide news — especially elections-related content and voter information — into Spanish. This project builds on previous pilot work around translating pandemic coverage.\n",
-          "focusArea": "Civic news and information reporting",
-          "status": "active"
+          "amount": 130000,
+          "description": "Received funding to support the expansion of the South Jersey Information Equity Project (SJEIP) from a cohort of 5 to 10 fellows annually and establish an SJIEP community reporting workshop series to further engage local storytellers through intergenerational learning and co-creation workshops. \n",
+          "focusArea": "Civic engagement in NJ communities",
+          "status": "completed"
         },
         {
           "id": 2,
-          "years": [
-            "2022",
-            "2024"
-          ],
-          "amount": 271993,
-          "description": "Received funding to fund a researcher at the Center for Cooperative Media at Montclair State University to conduct research on the New Jersey local news ecosystem. The researcher will also conduct learning and impact evaluation for the Consortium.\n",
-          "focusArea": "Civic engagement in NJ communities",
-          "status": "active"
-        },
-        {
-          "id": 3,
           "years": [
             "2023"
           ],
@@ -225,21 +232,35 @@
           "status": "completed"
         },
         {
+          "id": 3,
+          "years": [
+            "2022",
+            "2024",
+            "2025"
+          ],
+          "amount": 366038.88,
+          "description": "Received funding to fund a researcher at the Center for Cooperative Media at Montclair State University to conduct research on the New Jersey local news ecosystem. The researcher will also conduct learning and impact evaluation for the Consortium.\n",
+          "focusArea": "Civic engagement in NJ communities",
+          "status": "active"
+        },
+        {
           "id": 4,
           "years": [
+            "2022",
             "2023",
-            "2024"
+            "2024",
+            "2025"
           ],
-          "amount": 130000,
-          "description": "Received funding to support the expansion of the South Jersey Information Equity Project (SJEIP) from a cohort of 5 to 10 fellows annually and establish an SJIEP community reporting workshop series to further engage local storytellers through intergenerational learning and co-creation workshops. \n",
-          "focusArea": "Civic engagement in NJ communities",
+          "amount": 225000,
+          "description": "Received funding to launch the NJ News Commons Spanish Translation Service, partnering with the largest Spanish-language and mainstream media outlets in the state to translate statewide news — especially elections-related content and voter information — into Spanish. This project builds on previous pilot work around translating pandemic coverage.\n",
+          "focusArea": "Civic news and information reporting",
           "status": "active"
         }
       ],
-      "totalAmount": 676063,
+      "totalAmount": 820108.88,
       "focusAreas": [
-        "Civic news and information reporting",
-        "Civic engagement in NJ communities"
+        "Civic engagement in NJ communities",
+        "Civic news and information reporting"
       ],
       "hasMultipleGrants": true,
       "grantCount": 4
@@ -253,7 +274,7 @@
         "2024",
         "2025"
       ],
-      "amount": 281066,
+      "amount": 301066,
       "lat": 40.2206,
       "lng": -74.7597,
       "status": "active",
@@ -286,7 +307,7 @@
         "2024",
         "2025"
       ],
-      "amount": 300000,
+      "amount": 320000,
       "lat": 40.7357,
       "lng": -74.1724,
       "status": "active",
@@ -301,9 +322,10 @@
       "years": [
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
-      "amount": 225000,
+      "amount": 300000,
       "lat": 40.7357,
       "lng": -74.1724,
       "status": "active",
@@ -323,7 +345,7 @@
       "amount": 150000,
       "lat": 40.4922,
       "lng": -74.4513,
-      "status": "active",
+      "status": "completed",
       "website": "https://colab-arts.org/?gad_source=1&gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDDK1acfRNlARS5FuRP4RqrMazI3HVmTC9iYJZlhcCg7EavH8TBWzhcaAoDvEALw_wcB",
       "focusArea": "Civic engagement in NJ communities; Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "This organization received 2 grants totaling $150,000.",
@@ -347,7 +369,7 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         }
       ],
       "totalAmount": 150000,
@@ -367,9 +389,9 @@
         "2024"
       ],
       "amount": 158315,
-      "lat": 40.8568,
-      "lng": -74.481,
-      "status": "active",
+      "lat": 40.7331,
+      "lng": -74.4977,
+      "status": "completed",
       "website": "https://newsweneed.org",
       "focusArea": "Civic engagement in NJ communities",
       "description": "Received funding to fund the continuation of the work of the Northern NJ News Collaborative on its “Stormwater Matters” initiative and will grow community engagement.\n"
@@ -445,39 +467,26 @@
         "2024",
         "2025"
       ],
-      "amount": 398300,
+      "amount": 418300,
       "lat": 39.3643,
       "lng": -74.4229,
       "status": "active",
       "website": "https://frontrunnernewjersey.com",
-      "focusArea": "Civic news and information reporting; Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline",
-      "description": "This organization received 3 grants totaling $398,300.",
+      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline; Civic news and information reporting",
+      "description": "This organization received 3 grants totaling $418,300.",
       "grants": [
         {
           "id": 1,
-          "years": [
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "amount": 385000,
-          "description": "Received funding to support Front Runner New Jersey, a new site led by a veteran journalist who seeks to maintain and expand its coverage and bring a new perspective on the people, events, and issues making an impact on the African American and Latino communities in Atlantic City and South Jersey. Front Runner brings a restorative perspective to news and information reporting. \n",
-          "focusArea": "Civic news and information reporting",
-          "status": "active"
-        },
-        {
-          "id": 2,
           "years": [
             "2024"
           ],
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         },
         {
-          "id": 3,
+          "id": 2,
           "years": [
             "2025"
           ],
@@ -485,13 +494,26 @@
           "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
           "focusArea": "Journalism pipeline",
           "status": "active"
+        },
+        {
+          "id": 3,
+          "years": [
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "amount": 405000,
+          "description": "Received funding to support Front Runner New Jersey, a new site led by a veteran journalist who seeks to maintain and expand its coverage and bring a new perspective on the people, events, and issues making an impact on the African American and Latino communities in Atlantic City and South Jersey. Front Runner brings a restorative perspective to news and information reporting. \n",
+          "focusArea": "Civic news and information reporting",
+          "status": "active"
         }
       ],
-      "totalAmount": 398300,
+      "totalAmount": 418300,
       "focusAreas": [
-        "Civic news and information reporting",
         "Blue Engine Tech & Sustainability Accelerator Grant",
-        "Journalism pipeline"
+        "Journalism pipeline",
+        "Civic news and information reporting"
       ],
       "hasMultipleGrants": true,
       "grantCount": 3
@@ -541,12 +563,33 @@
       "lat": 39.6368,
       "lng": -74.8021,
       "status": "active",
-      "website": "https://www.hammontongazette.com",
-      "focusArea": "Civic news and information reporting; Journalism pipeline",
+      "website": "http://hammontongazette.com",
+      "focusArea": "Journalism pipeline; Civic news and information reporting",
       "description": "This organization received 3 grants totaling $307,343.",
       "grants": [
         {
           "id": 1,
+          "years": [
+            "2024",
+            "2025"
+          ],
+          "amount": 100000,
+          "description": "Received funding to fund the expansion of its coverage to neighboring communities in South-Central New Jersey that currently lack local news. It will fund additional staff, including a new position and an expanded freelance budget involving Rowan students, enabling the Gazette to provide weekly coverage of local events, activities, and sports. The project also offers young journalists practical experience, supporting the Gazette's mission to deliver reliable news in an area facing a decline in traditional news sources.\n\n",
+          "focusArea": "Journalism pipeline",
+          "status": "active"
+        },
+        {
+          "id": 2,
+          "years": [
+            "2025"
+          ],
+          "amount": 3300,
+          "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
+          "focusArea": "Journalism pipeline",
+          "status": "active"
+        },
+        {
+          "id": 3,
           "years": [
             "2021",
             "2022",
@@ -558,33 +601,12 @@
           "description": "Received funding to launch its Spanish publication, “Noticias”, making its news coverage more representative of Hammonton’s southern New Jersey community. The paper offers news articles in Spanish and initiates outreach to seasonal agricultural workers and more permanent members of the local Spanish-speaking community. It also funds freelance reporters to cover municipal meetings in news deserts in Atlantic County and Camden County. Noticias was the first local newspaper to offer news articles in Spanish (Mexican Dialect). \n",
           "focusArea": "Civic news and information reporting",
           "status": "active"
-        },
-        {
-          "id": 2,
-          "years": [
-            "2024",
-            "2025"
-          ],
-          "amount": 100000,
-          "description": "Received funding to fund the expansion of its coverage to neighboring communities in South-Central New Jersey that currently lack local news. It will fund additional staff, including a new position and an expanded freelance budget involving Rowan students, enabling the Gazette to provide weekly coverage of local events, activities, and sports. The project also offers young journalists practical experience, supporting the Gazette's mission to deliver reliable news in an area facing a decline in traditional news sources.\n\n",
-          "focusArea": "Journalism pipeline",
-          "status": "active"
-        },
-        {
-          "id": 3,
-          "years": [
-            "2025"
-          ],
-          "amount": 3300,
-          "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
-          "focusArea": "Journalism pipeline",
-          "status": "active"
         }
       ],
       "totalAmount": 307343,
       "focusAreas": [
-        "Civic news and information reporting",
-        "Journalism pipeline"
+        "Journalism pipeline",
+        "Civic news and information reporting"
       ],
       "hasMultipleGrants": true,
       "grantCount": 3
@@ -599,7 +621,7 @@
       "amount": 10000,
       "lat": 40.4289,
       "lng": -74.1651,
-      "status": "active",
+      "status": "completed",
       "website": "headynj.com",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
@@ -609,9 +631,10 @@
       "county": "Statewide",
       "city": "Camden",
       "years": [
-        "2025"
+        "2025",
+        "2026"
       ],
-      "amount": 30000,
+      "amount": 70000,
       "lat": 39.9259,
       "lng": -75.1196,
       "status": "active",
@@ -629,7 +652,7 @@
       "amount": 10000,
       "lat": 39.4273,
       "lng": -75.2341,
-      "status": "active",
+      "status": "completed",
       "website": "www.followsouthjersey.com",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
@@ -655,7 +678,7 @@
     },
     {
       "name": "HudPost",
-      "county": "North Jersey",
+      "county": "Hudson County",
       "city": "Jersey City",
       "years": [
         "2025"
@@ -664,8 +687,8 @@
       "lat": 40.7178,
       "lng": -74.0431,
       "status": "active",
-      "website": "HudPost.com",
-      "focusArea": "Journalism pipeline; Civic news and information reporting",
+      "website": "https://hudpost.com/",
+      "focusArea": "Civic news and information reporting; Journalism pipeline",
       "description": "This organization received 2 grants totaling $103,300.",
       "grants": [
         {
@@ -673,9 +696,9 @@
           "years": [
             "2025"
           ],
-          "amount": 3300,
-          "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
-          "focusArea": "Journalism pipeline",
+          "amount": 100000,
+          "description": "Received funding to support expanded bilingual coverage in Hudson County through new reporting staff, print editions, and community engagement events.",
+          "focusArea": "Civic news and information reporting",
           "status": "active"
         },
         {
@@ -683,16 +706,16 @@
           "years": [
             "2025"
           ],
-          "amount": 100000,
-          "description": "Received funding To support expanded bilingual coverage in Hudson County through new reporting staff, print editions, and community engagement events.",
-          "focusArea": "Civic news and information reporting",
+          "amount": 3300,
+          "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
+          "focusArea": "Journalism pipeline",
           "status": "active"
         }
       ],
       "totalAmount": 103300,
       "focusAreas": [
-        "Journalism pipeline",
-        "Civic news and information reporting"
+        "Civic news and information reporting",
+        "Journalism pipeline"
       ],
       "hasMultipleGrants": true,
       "grantCount": 2
@@ -754,7 +777,7 @@
       "amount": 10000,
       "lat": 40.7357,
       "lng": -74.1724,
-      "status": "active",
+      "status": "completed",
       "website": "WWW.THELATINOSPIRIT.COM",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
@@ -797,13 +820,13 @@
         "2024",
         "2025"
       ],
-      "amount": 13300,
+      "amount": 88300,
       "lat": 40.3249,
       "lng": -74.7888,
       "status": "active",
       "website": "www.mercerme.com",
-      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline",
-      "description": "This organization received 2 grants totaling $13,300.",
+      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline; Civic news and information reporting",
+      "description": "This organization received 3 grants totaling $88,300.",
       "grants": [
         {
           "id": 1,
@@ -813,7 +836,7 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         },
         {
           "id": 2,
@@ -824,15 +847,26 @@
           "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
           "focusArea": "Journalism pipeline",
           "status": "active"
+        },
+        {
+          "id": 3,
+          "years": [
+            "2025"
+          ],
+          "amount": 75000,
+          "description": "Received funding to support organizational growth and sustainability, helping ensure continued access to free, reliable local news for Mercer county community.",
+          "focusArea": "Civic news and information reporting",
+          "status": "active"
         }
       ],
-      "totalAmount": 13300,
+      "totalAmount": 88300,
       "focusAreas": [
         "Blue Engine Tech & Sustainability Accelerator Grant",
-        "Journalism pipeline"
+        "Journalism pipeline",
+        "Civic news and information reporting"
       ],
       "hasMultipleGrants": true,
-      "grantCount": 2
+      "grantCount": 3
     },
     {
       "name": "Montclair Local Nonprofit News",
@@ -840,41 +874,43 @@
       "city": "Montclair",
       "years": [
         "2024",
-        "2025"
+        "2025",
+        "2026"
       ],
-      "amount": 90000,
+      "amount": 190000,
       "lat": 40.8259,
       "lng": -74.209,
       "status": "active",
-      "website": "montclairlocal.news",
-      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Civic news and information reporting",
-      "description": "This organization received 2 grants totaling $90,000.",
+      "website": "https://montclairlocal.news/",
+      "focusArea": "Civic news and information reporting; Blue Engine Tech & Sustainability Accelerator Grant",
+      "description": "This organization received 2 grants totaling $190,000.",
       "grants": [
         {
           "id": 1,
+          "years": [
+            "2025",
+            "2026"
+          ],
+          "amount": 180000,
+          "description": "Received funding to hire a senior reporter dedicated to covering Essex County and the issues facing its communities, including a wide range of topics such as public spending, county government, housing and development, environmental concerns, transportation, public safety, and local institutions, businesses, and arts and culture organizations that shape residents’ daily lives.",
+          "focusArea": "Civic news and information reporting",
+          "status": "active"
+        },
+        {
+          "id": 2,
           "years": [
             "2024"
           ],
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
-        },
-        {
-          "id": 2,
-          "years": [
-            "2025"
-          ],
-          "amount": 80000,
-          "description": "Received funding to hire a senior reporter dedicated to covering Essex County and the issues facing its communities, including a wide range of topics such as public spending, county government, housing and development, environmental concerns, transportation, public safety, and local institutions, businesses, and arts and culture organizations that shape residents’ daily lives.",
-          "focusArea": "Civic news and information reporting",
-          "status": "active"
+          "status": "completed"
         }
       ],
-      "totalAmount": 90000,
+      "totalAmount": 190000,
       "focusAreas": [
-        "Blue Engine Tech & Sustainability Accelerator Grant",
-        "Civic news and information reporting"
+        "Civic news and information reporting",
+        "Blue Engine Tech & Sustainability Accelerator Grant"
       ],
       "hasMultipleGrants": true,
       "grantCount": 2
@@ -917,7 +953,7 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         }
       ],
       "totalAmount": 230000,
@@ -955,7 +991,7 @@
       "amount": 10000,
       "lat": 40.7357,
       "lng": -74.1724,
-      "status": "active",
+      "status": "completed",
       "website": "http://muslim.co",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
@@ -971,7 +1007,7 @@
       "amount": 459000,
       "lat": 40.2206,
       "lng": -74.7597,
-      "status": "active",
+      "status": "completed",
       "website": "https://njhumanities.org/programs/informed-nj/#grassroots",
       "focusArea": "Journalism pipeline",
       "description": "Received funding to fund the development of a statewide journalism training program in partnership with six New Jersey community colleges that equips citizens with skills to tell the stories of their communities. Journalism + Design and NJCH piloted a similar program in South Jersey in spring 2022."
@@ -1020,21 +1056,11 @@
       "lng": -74.1724,
       "status": "active",
       "website": "https://www.njurbannews.com",
-      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Civic news and information reporting; Journalism pipeline",
+      "focusArea": "Civic news and information reporting; Journalism pipeline; Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "This organization received 3 grants totaling $233,300.",
       "grants": [
         {
           "id": 1,
-          "years": [
-            "2024"
-          ],
-          "amount": 10000,
-          "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
-          "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
-        },
-        {
-          "id": 2,
           "years": [
             "2024",
             "2025"
@@ -1045,7 +1071,7 @@
           "status": "active"
         },
         {
-          "id": 3,
+          "id": 2,
           "years": [
             "2025"
           ],
@@ -1053,13 +1079,23 @@
           "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
           "focusArea": "Journalism pipeline",
           "status": "active"
+        },
+        {
+          "id": 3,
+          "years": [
+            "2024"
+          ],
+          "amount": 10000,
+          "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
+          "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
+          "status": "completed"
         }
       ],
       "totalAmount": 233300,
       "focusAreas": [
-        "Blue Engine Tech & Sustainability Accelerator Grant",
         "Civic news and information reporting",
-        "Journalism pipeline"
+        "Journalism pipeline",
+        "Blue Engine Tech & Sustainability Accelerator Grant"
       ],
       "hasMultipleGrants": true,
       "grantCount": 3
@@ -1147,8 +1183,23 @@
       "description": "Received funding to support efforts to expand the reach and enhance the impact of Garden State Leaders, a statewide leadership and advocacy training program for New Jersey residents with lived experience of homelessness and poverty. The funds will enable them to formalize their ongoing statewide support and outcome tracking, and to pilot a local leadership program in collaboration with the Mercer Alliance to End Homelessness, for replication in other counties.\n"
     },
     {
+      "name": "NJ Monitor",
+      "county": "Statewide",
+      "city": "Trenton",
+      "years": [
+        "2025"
+      ],
+      "amount": 210000,
+      "lat": 40.2206,
+      "lng": -74.7597,
+      "status": "active",
+      "website": "https://newjerseymonitor.com/",
+      "focusArea": "Civic news and information reporting",
+      "description": "Received funding to support a dedicated health care reporter at the New Jersey Monitor, strengthening coverage of health policy, public health, and the health care system across the state. This funding supports up to three years and is funded in part by the Robert Wood Johnson Foundation."
+    },
+    {
       "name": "NJ Pen",
-      "county": "Passaic County",
+      "county": "South Jersey",
       "city": "Haddonfield",
       "years": [
         "2024",
@@ -1158,22 +1209,12 @@
       "lat": 39.8915,
       "lng": -75.0379,
       "status": "active",
-      "website": "https://www.njpen.com/",
-      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline",
+      "website": "https://www.njpen.com",
+      "focusArea": "Journalism pipeline; Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "This organization received 2 grants totaling $13,300.",
       "grants": [
         {
           "id": 1,
-          "years": [
-            "2024"
-          ],
-          "amount": 10000,
-          "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
-          "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
-        },
-        {
-          "id": 2,
           "years": [
             "2025"
           ],
@@ -1181,12 +1222,22 @@
           "description": "Received funding to support the placement of a student intern through the Statewide Paid Internship Program.",
           "focusArea": "Journalism pipeline",
           "status": "active"
+        },
+        {
+          "id": 2,
+          "years": [
+            "2024"
+          ],
+          "amount": 10000,
+          "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
+          "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
+          "status": "completed"
         }
       ],
       "totalAmount": 13300,
       "focusAreas": [
-        "Blue Engine Tech & Sustainability Accelerator Grant",
-        "Journalism pipeline"
+        "Journalism pipeline",
+        "Blue Engine Tech & Sustainability Accelerator Grant"
       ],
       "hasMultipleGrants": true,
       "grantCount": 2
@@ -1201,13 +1252,13 @@
         "2024",
         "2025"
       ],
-      "amount": 455000,
+      "amount": 555000,
       "lat": 40.7357,
       "lng": -74.1724,
       "status": "active",
       "website": "https://www.njspotlightnews.org/?gad_source=1&gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDD6AXC1bQlAk7_gREefC_S0FnIr46tD7EmNV97SoKrC_r04-l2YMHoaAlmNEALw_wcB",
       "focusArea": "Civic news and information reporting",
-      "description": "This organization received 2 grants totaling $455,000.",
+      "description": "This organization received 2 grants totaling $555,000.",
       "grants": [
         {
           "id": 1,
@@ -1225,15 +1276,16 @@
           "id": 2,
           "years": [
             "2023",
-            "2024"
+            "2024",
+            "2025"
           ],
-          "amount": 205000,
-          "description": "Received funding  to hire a Washington, D.C.-based correspondent to provide regular reporting to NJ Spotlight News and a collaborative network of newsrooms across the state on developments affecting New Jersey. \n",
+          "amount": 305000,
+          "description": "Received funding to support the salary of a Washington, D.C.-based correspondent to provide regular reporting to NJ Spotlight News and a collaborative network of newsrooms across the state on developments affecting New Jersey. \n",
           "focusArea": "Civic news and information reporting",
           "status": "active"
         }
       ],
-      "totalAmount": 455000,
+      "totalAmount": 555000,
       "focusAreas": [
         "Civic news and information reporting"
       ],
@@ -1277,43 +1329,45 @@
       "years": [
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
-      "amount": 300000,
+      "amount": 400000,
       "lat": 40.7357,
       "lng": -74.1724,
       "status": "active",
       "website": "https://www.publicsq.org",
-      "focusArea": "Journalism pipeline; Blue Engine Tech & Sustainability Accelerator Grant",
-      "description": "This organization received 2 grants totaling $300,000.",
+      "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline",
+      "description": "This organization received 2 grants totaling $400,000.",
       "grants": [
         {
           "id": 1,
-          "years": [
-            "2022",
-            "2023",
-            "2024"
-          ],
-          "amount": 290000,
-          "description": "Received funding to fund a program to recruit, train, and promote community reporters and journalism students and provide an outlet for their work in Caribbean, African, Indigenous, and Immigrant communities.\n",
-          "focusArea": "Journalism pipeline",
-          "status": "active"
-        },
-        {
-          "id": 2,
           "years": [
             "2024"
           ],
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
+          "status": "completed"
+        },
+        {
+          "id": 2,
+          "years": [
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "amount": 390000,
+          "description": "Received funding to fund a program to recruit, train, and promote community reporters and journalism students and provide an outlet for their work in Caribbean, African, Indigenous, and Immigrant communities.\n",
+          "focusArea": "Journalism pipeline",
           "status": "active"
         }
       ],
-      "totalAmount": 300000,
+      "totalAmount": 400000,
       "focusAreas": [
-        "Journalism pipeline",
-        "Blue Engine Tech & Sustainability Accelerator Grant"
+        "Blue Engine Tech & Sustainability Accelerator Grant",
+        "Journalism pipeline"
       ],
       "hasMultipleGrants": true,
       "grantCount": 2
@@ -1341,15 +1395,16 @@
         "2021",
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
-      "amount": 305000,
+      "amount": 405000,
       "lat": 40.9912,
       "lng": -74.9471,
       "status": "active",
       "website": "https://ridgeviewecho.com",
       "focusArea": "Civic news and information reporting; Blue Engine Tech & Sustainability Accelerator Grant",
-      "description": "This organization received 2 grants totaling $305,000.",
+      "description": "This organization received 2 grants totaling $405,000.",
       "grants": [
         {
           "id": 1,
@@ -1357,9 +1412,10 @@
             "2021",
             "2022",
             "2023",
-            "2024"
+            "2024",
+            "2025"
           ],
-          "amount": 295000,
+          "amount": 395000,
           "description": "Received funding to address the loss of local-news outlets by launching the Greater Blairstown News Project online publication, the Ridge View Echo, reporting on Blairstown, Frelinghuysen, Hardwick and Knowlton, all Warren County communities with no other dedicated local news sources. This effort provides residents with vital and timely government announcements about public health and safety, and foster greater connection to and awareness of local issues across northwest New Jersey.\n",
           "focusArea": "Civic news and information reporting",
           "status": "active"
@@ -1372,10 +1428,10 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         }
       ],
-      "totalAmount": 305000,
+      "totalAmount": 405000,
       "focusAreas": [
         "Civic news and information reporting",
         "Blue Engine Tech & Sustainability Accelerator Grant"
@@ -1393,7 +1449,7 @@
         "2024",
         "2025"
       ],
-      "amount": 360000,
+      "amount": 380000,
       "lat": 40.7237,
       "lng": -74.0468,
       "status": "active",
@@ -1419,6 +1475,21 @@
       "description": "Received funding  to fund stipends for student interns providing high quality news coverage of climate change in South Jersey, including the impact on the environment, agriculture, the Pine Barrens, beaches, tourism, and wetlands. \n"
     },
     {
+      "name": "South Jersey Emerging Journalists Project",
+      "county": "South Jersey",
+      "city": "Camden",
+      "years": [
+        "2025"
+      ],
+      "amount": 50000,
+      "lat": 39.9259,
+      "lng": -75.1196,
+      "status": "active",
+      "website": "https://sjejp.org/",
+      "focusArea": "Journalism pipeline",
+      "description": "Received funding Formerly known as the South Jersey Information Equity Project based at the Center for Cooperative Media. The South Jersey Emerging Journalist Project provides training, fellowships, and professional development for Black journalists across South Jersey. Funding supports leadership capacity and journalist fellowships that strengthens pathways into journalism careers."
+    },
+    {
       "name": "Stories of Atlantic City",
       "county": "Atlantic County",
       "city": "Atlantic City",
@@ -1431,7 +1502,7 @@
       "amount": 99892,
       "lat": 39.3643,
       "lng": -74.4229,
-      "status": "active",
+      "status": "completed",
       "website": "https://storiesofatlanticcity.com",
       "focusArea": "Civic engagement in NJ communities",
       "description": "Received funding to pilot an initiative to train and pay community members as reporters covering the local city council, planning board, board of education, and casino reinvestment authority meetings, and to develop new ways to engage community members in the decision-making processes that impact their lives. Traditional journalism methods are not meeting the larger Atlantic City community’s information needs.\n"
@@ -1461,7 +1532,7 @@
       "amount": 10000,
       "lat": 40.9401,
       "lng": -74.1321,
-      "status": "active",
+      "status": "completed",
       "website": "https://www.tapinto.net",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
@@ -1476,7 +1547,7 @@
       "amount": 10000,
       "lat": 40.8584,
       "lng": -74.0821,
-      "status": "active",
+      "status": "completed",
       "website": "https://www.tapinto.net",
       "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. "
@@ -1509,7 +1580,7 @@
       "status": "active",
       "website": "https://www.tcnjsignalnews.com/",
       "focusArea": "Civic news and information reporting",
-      "description": "Received funding To support student-led investigative reporting, print distribution, and equipment upgrades that strengthen journalism training at TCNJ."
+      "description": "Received funding to support student-led investigative reporting, print distribution, and equipment upgrades that strengthen journalism training at TCNJ."
     },
     {
       "name": "The Conservatory of Music and Performing Arts Society",
@@ -1536,7 +1607,7 @@
       "amount": 70000,
       "lat": 40.5008,
       "lng": -74.4474,
-      "status": "active",
+      "status": "completed",
       "website": "http://dailytargum.com",
       "focusArea": "Civic news and information reporting; Blue Engine Tech & Sustainability Accelerator Grant",
       "description": "This organization received 2 grants totaling $70,000.",
@@ -1549,7 +1620,7 @@
           "amount": 60000,
           "description": "Received funding to support The Daily Targum, Rutgers University’s student-run news outlet, aims to expand its digital presence, attract advertisers, and secure a 2025 student fee referendum to restore University funding. As one of New Jersey's largest journalism training grounds, employing over 30 student journalists each year, the Targum aligns with the Consortium's mission by producing civic news and covering the Rutgers communities of New Brunswick, Newark, and Camden.\n",
           "focusArea": "Civic news and information reporting",
-          "status": "active"
+          "status": "completed"
         },
         {
           "id": 2,
@@ -1559,7 +1630,7 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         }
       ],
       "totalAmount": 70000,
@@ -1581,13 +1652,13 @@
         "2024",
         "2025"
       ],
-      "amount": 403300,
+      "amount": 423300,
       "lat": 40.8068,
       "lng": -74.1854,
       "status": "active",
       "website": "https://jerseybee.org",
       "focusArea": "Civic news and information reporting; Journalism pipeline",
-      "description": "This organization received 2 grants totaling $403,300.",
+      "description": "This organization received 2 grants totaling $423,300.",
       "grants": [
         {
           "id": 1,
@@ -1598,7 +1669,7 @@
             "2024",
             "2025"
           ],
-          "amount": 400000,
+          "amount": 420000,
           "description": "Received funding to launch a community-reporter corps pilot program that trains residents in news gathering, writing, and production and provides paid reporting assignments that prioritize the information needs of underserved populations in the surrounding community, inspire civic participation, and build narrative power. \n",
           "focusArea": "Civic news and information reporting",
           "status": "active"
@@ -1614,7 +1685,7 @@
           "status": "active"
         }
       ],
-      "totalAmount": 403300,
+      "totalAmount": 423300,
       "focusAreas": [
         "Civic news and information reporting",
         "Journalism pipeline"
@@ -1632,22 +1703,23 @@
         "2024",
         "2025"
       ],
-      "amount": 308300,
+      "amount": 408300,
       "lat": 40.7357,
       "lng": -74.1724,
       "status": "active",
       "website": "https://jerseyvindicator.org",
       "focusArea": "Civic news and information reporting; Blue Engine Tech & Sustainability Accelerator Grant; Journalism pipeline",
-      "description": "This organization received 3 grants totaling $308,300.",
+      "description": "This organization received 3 grants totaling $408,300.",
       "grants": [
         {
           "id": 1,
           "years": [
             "2022",
             "2023",
-            "2024"
+            "2024",
+            "2025"
           ],
-          "amount": 295000,
+          "amount": 395000,
           "description": "Received funding to build The Jersey Vindicator — the “ProPublica of New Jersey” — with the goal of engaging and empowering the public through investigative journalism at the local, county, and state level in its publication, ultimately ensuring that residents — particularly those in underserved communities — are better informed about government, business, education, transportation, criminal justice reform, and the environment.\n",
           "focusArea": "Civic news and information reporting",
           "status": "active"
@@ -1660,7 +1732,7 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         },
         {
           "id": 3,
@@ -1673,7 +1745,7 @@
           "status": "active"
         }
       ],
-      "totalAmount": 308300,
+      "totalAmount": 408300,
       "focusAreas": [
         "Civic news and information reporting",
         "Blue Engine Tech & Sustainability Accelerator Grant",
@@ -1695,7 +1767,22 @@
       "status": "active",
       "website": "https://www.towerphs.com/home",
       "focusArea": "Civic engagement in NJ communities",
-      "description": "Received funding To support technology and equipment upgrades that ensure equitable student participation in the newsroom and sustain print publication."
+      "description": "Received funding to support technology and equipment upgrades that ensure equitable student participation in the newsroom and sustain print publication."
+    },
+    {
+      "name": "The Village Green",
+      "county": "Essex County",
+      "city": "Maplewood",
+      "years": [
+        "2025"
+      ],
+      "amount": 40000,
+      "lat": 40.7355,
+      "lng": -74.2679,
+      "status": "active",
+      "website": "https://villagegreennj.com/",
+      "focusArea": "Journalism pipeline",
+      "description": "Received funding to support student newsroom internships that expand coverage while creating paid, mentored opportunities for emerging journalists."
     },
     {
       "name": "Trenton Journal",
@@ -1708,13 +1795,13 @@
         "2024",
         "2025"
       ],
-      "amount": 400000,
+      "amount": 420000,
       "lat": 40.2206,
       "lng": -74.7597,
       "status": "active",
       "website": "https://trentonjournal.com",
       "focusArea": "Civic engagement in NJ communities; Blue Engine Tech & Sustainability Accelerator Grant",
-      "description": "This organization received 2 grants totaling $400,000.",
+      "description": "This organization received 2 grants totaling $420,000.",
       "grants": [
         {
           "id": 1,
@@ -1725,8 +1812,8 @@
             "2024",
             "2025"
           ],
-          "amount": 390000,
-          "description": "Received funding to train local contributors to increase the frequency of Trenton Journal’s editorial output, help change the narrative, bridge information gaps, and connect communities in Trenton. The Trenton Journal focuses on addressing the disparities faced by the Black and Brown community in Trenton using solutions-based journalism via a newsletter, video, and audio stories.\n",
+          "amount": 410000,
+          "description": "Received funding to train local contributors to increase the frequency of Trenton Journal’s editorial output, help change the narrative, bridge information gaps, and connect communities in Trenton. The Trenton Journal focuses on addressing the disparities faced by the Black and Brown community in Trenton using solutions-based journalism via a newsletter, video, and audio stories.",
           "focusArea": "Civic engagement in NJ communities",
           "status": "active"
         },
@@ -1738,10 +1825,10 @@
           "amount": 10000,
           "description": "Received funding Blue Engine Technology & Sustainability Accelerator cohort members all received a $10,000 technology grant used to implement new technological solutions for the respective organizations. This includes, but is not limited to, software and hardware updates including website development, subscriptions for cloud-based applications, computer equipment, etc. ",
           "focusArea": "Blue Engine Tech & Sustainability Accelerator Grant",
-          "status": "active"
+          "status": "completed"
         }
       ],
-      "totalAmount": 400000,
+      "totalAmount": 420000,
       "focusAreas": [
         "Civic engagement in NJ communities",
         "Blue Engine Tech & Sustainability Accelerator Grant"
@@ -1757,9 +1844,9 @@
         "2024"
       ],
       "amount": 31879,
-      "lat": 40.3943,
-      "lng": -74.0632,
-      "status": "active",
+      "lat": 40.347,
+      "lng": -74.0643,
+      "status": "completed",
       "website": "https://tworivertimes.com/",
       "focusArea": "Civic news and information reporting",
       "description": "Received funding to support the Two River Times with costs associated with its organization’s transition from a for-profit to a non-profit."
@@ -1771,15 +1858,16 @@
       "years": [
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
-      "amount": 270000,
+      "amount": 370000,
       "lat": 40.5008,
       "lng": -74.4474,
       "status": "active",
       "website": "https://unidadlatinanj.org",
       "focusArea": "Civic news and information reporting",
-      "description": "Received funding  to support the Radio Jornalera NJ Communication Project, which brings together the development, production and dissemination of public service announcements from the Jornalero and Domestic Laborer Communicators throughout the state. The Public Service Announcements are on topics that affect daily life, such as housing rights, workers’ rights, wage theft, health and safety at work, healthy lifestyle, and/or climate change.\n"
+      "description": "Received funding to support the Radio Jornalera NJ Communication Project, which brings together the development, production and dissemination of public service announcements from the Jornalero and Domestic Laborer Communicators throughout the state. The Public Service Announcements are on topics that affect daily life, such as housing rights, workers’ rights, wage theft, health and safety at work, healthy lifestyle, and/or climate change.\n"
     },
     {
       "name": "VaccinateNJ.com",
@@ -1794,7 +1882,7 @@
       "status": "completed",
       "website": "",
       "focusArea": "Civic news and information reporting",
-      "description": "Received funding will add more features to its health information website to help residents statewide — including native Spanish speakers and others in underserved communities — get real-time information about vaccination appointment locations and vaccine availability.\n"
+      "description": "Received funding will add more features to its health information website to help residents statewide — including native Spanish speakers and others in underserved communities — get real-time information about vaccination appointment locations and vaccine availability."
     },
     {
       "name": "VietLead",
@@ -1809,7 +1897,7 @@
       "status": "completed",
       "website": "https://www.vietlead.org/our-roots-youth-program",
       "focusArea": "Civic engagement in NJ communities",
-      "description": "Received funding to hold neighborhood listening sessions in the 2023-2024 growing season through its Jersey Roots Youth Program, in collaboration with its Resilient Roots Farm Project, and to learn about what local issues are top of mind for its Black, Brown, and Southeast Asian neighbors who live, work, and play in East Camden neighborhoods.\n"
+      "description": "Received funding to hold neighborhood listening sessions in the 2023-2024 growing season through its Jersey Roots Youth Program, in collaboration with its Resilient Roots Farm Project, and to learn about what local issues are top of mind for its Black, Brown, and Southeast Asian neighbors who live, work, and play in East Camden neighborhoods."
     },
     {
       "name": "Wayne Hills High School",
@@ -1822,18 +1910,18 @@
       "amount": 35991,
       "lat": 40.9472,
       "lng": -74.2474,
-      "status": "active",
+      "status": "completed",
       "website": "https://whhspatriotpress.com/category/multimedia/",
       "focusArea": "Journalism pipeline",
-      "description": "Received funding to fund the creation of a podcasting studio and support the digital journalism program for students in Wayne Township. "
+      "description": "Received funding to fund the creation of a podcasting studio and support the digital journalism program for students in Wayne Township."
     }
   ],
   "metadata": {
-    "totalGrantees": 75,
-    "totalFunding": 10796392.75,
+    "totalGrantees": 77,
+    "totalFunding": 12210438.629999999,
     "officialTotalFunding": 11880438,
-    "totalGrants": 99,
-    "lastUpdated": "2025-12-17",
+    "totalGrants": 103,
+    "lastUpdated": "2026-04-22",
     "dataSource": "Airtable - Grants to date: NJ Civic Info Consortium",
     "note": "Data synced from Airtable. Organizations with multiple grants are consolidated."
   }

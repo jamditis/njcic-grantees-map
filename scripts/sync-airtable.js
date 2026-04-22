@@ -20,11 +20,12 @@ const path = require('path');
 
 // Configuration - uses environment variables
 // Set these in your .env file or environment
+// AIRTABLE_VIEW_ID='-' means "don't filter by a view" (fetch all records).
 const CONFIG = {
     PAT: process.env.AIRTABLE_PAT,
     BASE_ID: process.env.AIRTABLE_BASE_ID || 'appryDZWgPpP0GmZw',
     TABLE_ID: process.env.AIRTABLE_TABLE_ID || 'tblFADXYCq495smGH',
-    VIEW_ID: process.env.AIRTABLE_VIEW_ID || 'viwjXro41ehrvxTfs'
+    VIEW_ID: process.env.AIRTABLE_VIEW_ID === undefined ? 'viwjXro41ehrvxTfs' : process.env.AIRTABLE_VIEW_ID
 };
 
 // Check for required credentials
@@ -130,7 +131,10 @@ async function fetchAllRecords() {
  */
 function fetchPage(offset = null) {
     return new Promise((resolve, reject) => {
-        let pathUrl = `/v0/${CONFIG.BASE_ID}/${CONFIG.TABLE_ID}?view=${CONFIG.VIEW_ID}&pageSize=100`;
+        let pathUrl = `/v0/${CONFIG.BASE_ID}/${CONFIG.TABLE_ID}?pageSize=100`;
+        if (CONFIG.VIEW_ID && CONFIG.VIEW_ID !== '-') {
+            pathUrl += `&view=${CONFIG.VIEW_ID}`;
+        }
         if (offset) {
             pathUrl += `&offset=${offset}`;
         }
