@@ -20,11 +20,14 @@ const path = require('path');
 
 // Configuration - uses environment variables
 // Set these in your .env file or environment
+// By default the sync fetches every record in the table (no view filter).
+// Set AIRTABLE_VIEW_ID to a view ID (e.g. 'viwjXro41ehrvxTfs' for the MAP
+// view) to restrict the pull; leave it unset or set to '-' for no filter.
 const CONFIG = {
     PAT: process.env.AIRTABLE_PAT,
     BASE_ID: process.env.AIRTABLE_BASE_ID || 'appryDZWgPpP0GmZw',
     TABLE_ID: process.env.AIRTABLE_TABLE_ID || 'tblFADXYCq495smGH',
-    VIEW_ID: process.env.AIRTABLE_VIEW_ID || 'viwjXro41ehrvxTfs'
+    VIEW_ID: process.env.AIRTABLE_VIEW_ID || null
 };
 
 // Check for required credentials
@@ -130,7 +133,10 @@ async function fetchAllRecords() {
  */
 function fetchPage(offset = null) {
     return new Promise((resolve, reject) => {
-        let pathUrl = `/v0/${CONFIG.BASE_ID}/${CONFIG.TABLE_ID}?view=${CONFIG.VIEW_ID}&pageSize=100`;
+        let pathUrl = `/v0/${CONFIG.BASE_ID}/${CONFIG.TABLE_ID}?pageSize=100`;
+        if (CONFIG.VIEW_ID && CONFIG.VIEW_ID !== '-') {
+            pathUrl += `&view=${CONFIG.VIEW_ID}`;
+        }
         if (offset) {
             pathUrl += `&offset=${offset}`;
         }
@@ -266,7 +272,10 @@ function transformRecords(records, lookup) {
         const baseName = extractBaseGranteeName(fullName);
         const projectName = extractProjectName(fullName);
         const years = fields[FIELDS.YEARS] || [];
-        const amount = fields[FIELDS.AMOUNT] || 0;
+        // Round to cents at the source so every downstream serialization
+        // (per-grant amount, per-grantee total, metadata totalFunding) is
+        // consistent even if Airtable ever emits a fractional-cent value.
+        const amount = Math.round((fields[FIELDS.AMOUNT] || 0) * 100) / 100;
         const description = fields[FIELDS.GRANT_PURPOSE] || '';
         const focusArea = fields[FIELDS.FOCUS_AREA] || '';
         const county = fields[FIELDS.SERVICE_AREA] || 'Statewide';
@@ -339,7 +348,10 @@ function transformRecords(records, lookup) {
         }
 
         const yearsArray = Array.from(grantee.years).sort();
-        const totalAmount = grantee.grants.reduce((sum, g) => sum + g.amount, 0);
+        const totalAmount = grantee.grants.reduce(
+            (sum, g) => sum + Math.round((g.amount || 0) * 100),
+            0
+        ) / 100;
         const focusAreasArray = Array.from(grantee.focusAreas);
 
         const result = {
@@ -387,7 +399,13 @@ function transformRecords(records, lookup) {
  * Calculate metadata
  */
 function calculateMetadata(grantees) {
-    const totalFunding = grantees.reduce((sum, g) => sum + g.amount, 0);
+    // Accumulate in integer cents to avoid binary-float rounding drift
+    // (e.g. 12210438.629999999 instead of 12210438.63).
+    const totalFundingCents = grantees.reduce(
+        (sum, g) => sum + Math.round((g.amount || 0) * 100),
+        0
+    );
+    const totalFunding = totalFundingCents / 100;
     // Count total grants across all grantees
     const totalGrants = grantees.reduce((sum, g) => {
         if (g.hasMultipleGrants && g.grantCount) {
