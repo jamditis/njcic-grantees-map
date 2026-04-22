@@ -20,12 +20,14 @@ const path = require('path');
 
 // Configuration - uses environment variables
 // Set these in your .env file or environment
-// AIRTABLE_VIEW_ID='-' means "don't filter by a view" (fetch all records).
+// By default the sync fetches every record in the table (no view filter).
+// Set AIRTABLE_VIEW_ID to a view ID (e.g. 'viwjXro41ehrvxTfs' for the MAP
+// view) to restrict the pull; leave it unset or set to '-' for no filter.
 const CONFIG = {
     PAT: process.env.AIRTABLE_PAT,
     BASE_ID: process.env.AIRTABLE_BASE_ID || 'appryDZWgPpP0GmZw',
     TABLE_ID: process.env.AIRTABLE_TABLE_ID || 'tblFADXYCq495smGH',
-    VIEW_ID: process.env.AIRTABLE_VIEW_ID === undefined ? 'viwjXro41ehrvxTfs' : process.env.AIRTABLE_VIEW_ID
+    VIEW_ID: process.env.AIRTABLE_VIEW_ID || null
 };
 
 // Check for required credentials
@@ -343,7 +345,10 @@ function transformRecords(records, lookup) {
         }
 
         const yearsArray = Array.from(grantee.years).sort();
-        const totalAmount = grantee.grants.reduce((sum, g) => sum + g.amount, 0);
+        const totalAmount = grantee.grants.reduce(
+            (sum, g) => sum + Math.round((g.amount || 0) * 100),
+            0
+        ) / 100;
         const focusAreasArray = Array.from(grantee.focusAreas);
 
         const result = {
@@ -391,7 +396,13 @@ function transformRecords(records, lookup) {
  * Calculate metadata
  */
 function calculateMetadata(grantees) {
-    const totalFunding = grantees.reduce((sum, g) => sum + g.amount, 0);
+    // Accumulate in integer cents to avoid binary-float rounding drift
+    // (e.g. 12210438.629999999 instead of 12210438.63).
+    const totalFundingCents = grantees.reduce(
+        (sum, g) => sum + Math.round((g.amount || 0) * 100),
+        0
+    );
+    const totalFunding = totalFundingCents / 100;
     // Count total grants across all grantees
     const totalGrants = grantees.reduce((sum, g) => {
         if (g.hasMultipleGrants && g.grantCount) {
