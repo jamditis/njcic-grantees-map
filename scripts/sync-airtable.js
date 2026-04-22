@@ -272,7 +272,10 @@ function transformRecords(records, lookup) {
         const baseName = extractBaseGranteeName(fullName);
         const projectName = extractProjectName(fullName);
         const years = fields[FIELDS.YEARS] || [];
-        const amount = fields[FIELDS.AMOUNT] || 0;
+        // Round to cents at the source so every downstream serialization
+        // (per-grant amount, per-grantee total, metadata totalFunding) is
+        // consistent even if Airtable ever emits a fractional-cent value.
+        const amount = Math.round((fields[FIELDS.AMOUNT] || 0) * 100) / 100;
         const description = fields[FIELDS.GRANT_PURPOSE] || '';
         const focusArea = fields[FIELDS.FOCUS_AREA] || '';
         const county = fields[FIELDS.SERVICE_AREA] || 'Statewide';
