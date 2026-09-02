@@ -10,7 +10,7 @@ let currentMarkerIndex = 0;
 const IMPACT_TOTAL_FUNDING = 11880438;
 const IMPACT_TOTAL_GRANTS = 135;
 
-console.log('App.js loaded - version 14');
+console.log('App.js loaded - version 15');
 
 // Initialize the application
 async function init() {
@@ -102,10 +102,11 @@ function initMap() {
     // Ensure zoom is enabled programmatically even though user interactions are disabled
     map.options.zoomAnimation = true;
 
-    // Add CARTO Voyager tile layer
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    // Add CARTO Voyager tile layer (requires API key as of CARTO's basemap policy change)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2rjo_1_fc3cba129a9f8f68d22d8a29', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        maxZoom: 19
+        subdomains: 'abcd',
+        maxZoom: 20
     }).addTo(map);
 
     // Initialize marker cluster group
