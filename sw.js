@@ -1,7 +1,7 @@
 // Service Worker for NJCIC Grantees Map
 // Provides offline support and caching
 
-const CACHE_NAME = 'njcic-map-v2';
+const CACHE_NAME = 'njcic-map-v3';
 const OFFLINE_URL = '404.html';
 
 // Assets to cache on install
