@@ -816,7 +816,7 @@ document.addEventListener('DOMContentLoaded', init);
 // Register service worker for offline support
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
+        navigator.serviceWorker.register('sw.js?v=20260902a')
             .then(registration => {
                 console.log('ServiceWorker registered:', registration.scope);
             })
