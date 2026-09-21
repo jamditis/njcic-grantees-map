@@ -337,217 +337,6 @@
             }
         }
 
-        /* Impact section styles - Bento Grid */
-        .impact-section {
-            --color-teal: #2EB5C0;
-            --color-orange: #E85021;
-            --color-dark-blue: #1A3143;
-            --color-darker-blue: #112231;
-            --color-yellow: #E8AC36;
-            --color-cyan: #39C2D7;
-            --color-red: #E64124;
-            --ease-smooth: cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .impact-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background:
-                linear-gradient(rgba(17, 34, 49, 0.85), rgba(17, 34, 49, 0.95)),
-                url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            filter: blur(4px);
-            transform: scale(1.1);
-        }
-
-        .impact-header {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* When JS is available, start hidden for animation */
-        .js-enabled .impact-header {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        .impact-header.visible {
-            animation: impactSlideDown 1.2s var(--ease-smooth) forwards;
-        }
-
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-        }
-
-        .impact-card {
-            border-radius: 16px;
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            box-shadow:
-                0 4px 20px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.1);
-            position: relative;
-            overflow: hidden;
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
-            will-change: transform, opacity;
-            backface-visibility: hidden;
-        }
-
-        /* When JS is available, start hidden for animation */
-        .js-enabled .impact-card {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-        }
-
-        .impact-card.animate-in {
-            animation: impactCardReveal 1.2s var(--ease-smooth) forwards;
-        }
-
-        .impact-card:hover {
-            transform: translateY(-8px) scale(1.02) !important;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-            z-index: 2;
-        }
-
-        .impact-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(125deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 40%);
-            pointer-events: none;
-            transition: opacity 0.5s ease;
-        }
-
-        .impact-card:hover::after {
-            opacity: 0.8;
-        }
-
-        .stat-value {
-            font-family: 'Archivo', sans-serif;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-            transition: transform 1s var(--ease-smooth), opacity 1s ease;
-        }
-
-        .stat-label {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.3;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            opacity: 0.9;
-            transform: translateY(0);
-            transition: transform 1s var(--ease-smooth) 0.1s, opacity 1s ease 0.1s;
-        }
-
-        /* Stat values always visible - no animation hiding */
-        .stat-value,
-        .stat-label {
-            opacity: 1 !important;
-        }
-
-        /* Text size classes */
-        .text-huge { font-size: clamp(2.5rem, 5vw, 4.2rem); }
-        .text-large { font-size: clamp(2rem, 3.5vw, 3.5rem); }
-        .text-med { font-size: clamp(1.8rem, 3vw, 3rem); }
-
-        /* Card color classes */
-        .bg-impact-teal { background-color: #2EB5C0; }
-        .bg-impact-orange { background-color: #E85021; }
-        .bg-impact-dark-blue { background-color: #1A3143; }
-        .bg-impact-darker-blue { background-color: #15293a; }
-        .bg-impact-yellow { background-color: #E8AC36; color: #112231; }
-        .bg-impact-cyan { background-color: #39C2D7; }
-        .bg-impact-red { background-color: #E64124; }
-
-        /* Grid spans for bento layout */
-        .area-1 { grid-column: span 5; }
-        .area-2 { grid-column: span 3; }
-        .area-3 { grid-column: span 4; }
-        .area-4 { grid-column: span 4; }
-        .area-5 { grid-column: span 3; }
-        .area-6 { grid-column: span 5; }
-        .area-7 { grid-column: span 4; }
-        .area-8 { grid-column: span 3; }
-        .area-9 { grid-column: span 2; }
-        .area-10 { grid-column: span 3; }
-
-        /* Symbol styling */
-        .symbol {
-            font-size: 0.6em;
-            vertical-align: top;
-            margin-right: 2px;
-            opacity: 0.8;
-        }
-
-        .suffix {
-            font-size: 0.6em;
-            vertical-align: top;
-            margin-left: 2px;
-            opacity: 0.8;
-        }
-
-        /* Impact footer */
-        .impact-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1rem;
-            animation: impactFadeIn 1.5s ease 1s forwards;
-            opacity: 0;
-        }
-
-        /* Impact animations */
-        @keyframes impactSlideDown {
-            0% { opacity: 0; transform: translateY(-30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes impactCardReveal {
-            0% { opacity: 0; transform: translateY(40px) scale(0.98); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        @keyframes impactFadeIn {
-            to { opacity: 0.7; }
-        }
-
-        /* Impact responsive */
-        @media (max-width: 1024px) {
-            .impact-grid { grid-template-columns: repeat(2, 1fr); }
-            .area-1, .area-3, .area-6 { grid-column: span 2; }
-            .area-2, .area-4, .area-5, .area-7, .area-8, .area-10 { grid-column: span 1; }
-            .area-9 { grid-column: span 1; }
-        }
-
-        @media (max-width: 640px) {
-            .impact-grid { display: flex; flex-direction: column; }
-            .impact-card { padding: 1.25rem; }
-            .stat-label { font-size: 0.875rem; }
-        }
-
         /* Print styles */
         @media print {
             body {
@@ -604,16 +393,6 @@
 
             .text-\[\#2dc8d2\] {
                 color: #2dc8d2 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .impact-section {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .impact-card {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -800,205 +579,60 @@
             </div>
         </div>
 
-        <!-- Impact at a glance -->
-        <section class="full-width-breakout my-12" aria-labelledby="impact-heading">
-            <div class="impact-section relative overflow-hidden">
-                <div class="impact-background"></div>
-                <div class="container mx-auto px-4 md:px-8 py-12 md:py-16 max-w-7xl relative z-10">
-                    <!-- Header -->
-                    <header class="impact-header mb-8" id="impact-header">
-                        <h2 class="text-[#E8AC36] text-lg md:text-xl font-semibold mb-1" style="font-family: 'Space Grotesk', sans-serif;">New Jersey Civic Info Consortium</h2>
-                        <h3 id="impact-heading" class="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold" style="font-family: 'Archivo', sans-serif; letter-spacing: -0.02em; background: linear-gradient(to bottom, #fff, #e0e0e0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Impact at a glance</h3>
-                    </header>
-
-                    <!-- Bento Grid -->
-                    <div class="impact-grid mb-8">
-                        <!-- Row 1 -->
-                        <div class="impact-card bg-impact-teal area-1 text-white" style="animation-delay: 100ms;">
-                            <span class="stat-value text-huge">$12,070,438</span>
-                            <span class="stat-label">Invested in civic information across the state</span>
-                        </div>
-
-                        <div class="impact-card bg-impact-orange area-2 text-white" style="animation-delay: 250ms;">
-                            <span class="stat-value text-large">9,065</span>
-                            <span class="stat-label">Stories published since 2021*</span>
-                        </div>
-
-                        <div class="impact-card bg-impact-dark-blue area-3 text-white" style="animation-delay: 400ms;">
-                            <span class="stat-value text-large">14,493</span>
-                            <span class="stat-label">News briefs published since 2021*</span>
-                        </div>
-
-                        <!-- Row 2 -->
-                        <div class="impact-card bg-impact-darker-blue area-4 text-white" style="animation-delay: 550ms;">
-                            <span class="stat-value text-large">3,856</span>
-                            <span class="stat-label">Ethnic/BIPOC & Spanish-language stories</span>
-                        </div>
-
-                        <div class="impact-card bg-impact-yellow area-5" style="animation-delay: 700ms;">
-                            <span class="stat-value text-large">1,271</span>
-                            <span class="stat-label">New storytellers trained across NJ**</span>
-                        </div>
-
-                        <div class="impact-card bg-impact-cyan area-6 text-white" style="animation-delay: 850ms;">
-                            <span class="stat-value text-large">2,327</span>
-                            <span class="stat-label">NJCIC-funded stories amplified across other news platforms</span>
-                        </div>
-
-                        <!-- Row 3 -->
-                        <div class="impact-card bg-impact-red area-7 text-white" style="animation-delay: 1000ms;">
-                            <span class="stat-value text-med">158</span>
-                            <span class="stat-label">Residents trained to cover public meetings in NJ</span>
-                        </div>
-
-                        <div class="impact-card bg-impact-dark-blue area-8 text-white" style="animation-delay: 1150ms;">
-                            <span class="stat-value text-med">135</span>
-                            <span class="stat-label">Grants awarded since 2021</span>
-                        </div>
-
-                        <div class="impact-card bg-impact-red area-9 text-white" style="animation-delay: 1300ms;">
-                            <span class="stat-value text-med">48%</span>
-                            <span class="stat-label">BIPOC-led projects</span>
-                        </div>
-
-                        <div class="impact-card bg-impact-yellow area-10" style="animation-delay: 1450ms;">
-                            <span class="stat-value text-med">86%</span>
-                            <span class="stat-label">NJ counties represented</span>
-                        </div>
-                    </div>
-
-                    <!-- Footer -->
-                    <footer class="impact-footer text-white">
-                        <div class="flex flex-col gap-1">
-                            <span>* based on data collected from 32 grantees</span>
-                            <span>** based on data collected from 16 grantees</span>
-                        </div>
-                        <a href="https://njcivicinfo.org" target="_blank" rel="noopener noreferrer" class="text-white hover:opacity-70 font-bold text-lg transition-opacity" style="font-family: 'Archivo', sans-serif;">njcivicinfo.org</a>
-                    </footer>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section Redesign -->
-        <section class="about-section relative my-16 px-4">
-            <!-- Decorative background elements -->
-            <div class="absolute inset-0 bg-dot-pattern opacity-10 pointer-events-none -z-10"></div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto">
-                <!-- Mission Card -->
-                <div class="lg:col-span-7 bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-2 h-full bg-[#2dc8d2]"></div>
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[100px] -z-10 opacity-50 transition-transform group-hover:scale-110 duration-700"></div>
-                    
-                    <h2 class="text-3xl font-bold text-[#183642] mb-6 font-space-grotesk flex items-center gap-3">
-                        <span class="w-10 h-1 bg-[#2dc8d2] inline-block rounded-full"></span>
-                        Our Mission
-                    </h2>
-                    
-                    <div class="prose prose-lg text-gray-600 leading-relaxed">
-                        <p class="mb-6">
-                            The <strong class="text-[#183642]">New Jersey Civic Information Consortium</strong> is an independent, 501(c)(3) nonprofit organization that funds initiatives to benefit the State's civic life and meet the evolving information needs of New Jersey's communities.
-                        </p>
-                        
-                        <p class="mb-6">
-                            A first-in-the-nation project, the Consortium builds on the foundation laid by public media in the United States, and reimagines how public funding can be used to address the growing problem of news deserts, misinformation, and support more informed communities.
-                        </p>
-                        
-                        <div class="bg-[#f0f9fa] rounded-xl p-6 border border-[#b8e6e9] mt-8 flex items-start gap-4">
-                            <div class="bg-[#2dc8d2] rounded-full p-2 text-white shrink-0 mt-1 shadow-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-[#183642] mb-1">Historic Investment</h3>
-                                <p class="text-sm text-[#183642]">
-                                    To date, the Consortium has invested more than <span class="font-bold text-lg border-b-2 border-[#2dc8d2]">$12 million</span> in local news across the state, supporting roughly 75 newsrooms in 19 of New Jersey's 21 counties.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Goals Card -->
-                <div class="lg:col-span-5 bg-[#183642] rounded-2xl shadow-xl p-8 md:p-10 text-white relative overflow-hidden flex flex-col h-full">
-                    <!-- Decor -->
-                    <div class="absolute bottom-0 right-0 w-64 h-64 bg-[#2dc8d2] opacity-10 rounded-tl-full blur-3xl pointer-events-none"></div>
-                    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHNjbGFzcz0iZmlsbC1jdXJyZW50IiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9zdmc+')] opacity-30 pointer-events-none"></div>
-
-                    <h2 class="text-2xl font-bold text-[#2dc8d2] mb-6 font-space-grotesk border-b border-gray-700 pb-4">Strategic Goals</h2>
-                    
-                    <ul class="space-y-4 relative z-10 flex-grow">
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0"></path></svg>
-                            <span class="text-gray-200 text-sm leading-relaxed">Improve quantity and quality of civic information.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                            <span class="text-gray-200 text-sm leading-relaxed">Enhanced access to government data and public info.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                            <span class="text-gray-200 text-sm leading-relaxed">Train residents in storytelling & media production.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            <span class="text-gray-200 text-sm leading-relaxed">Nurture better civic engagement and dialogue.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-[#2dc8d2] mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                            <span class="text-gray-200 text-sm leading-relaxed">Meet needs of underserved low-income & BIPOC communities.</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="mt-8 pt-6 border-t border-gray-700">
-                        <a href="https://njcivicinfo.org/wp-content/uploads/2024/09/NJCIC-Strategic-Plan-2024-2026.pdf" target="_blank" class="group inline-flex items-center text-[#2dc8d2] font-bold text-sm hover:text-white transition-colors">
-                            Read full strategic plan
-                            <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- New Site Footer -->
+        <!-- Site Footer (matches njcivicinfo.org) -->
         <footer class="site-footer bg-[#112231] text-white rounded-t-3xl mt-20 relative overflow-hidden">
             <!-- Top teal accent bar -->
             <div class="h-1.5 w-full bg-gradient-to-r from-[#2dc8d2] via-[#2dc8d2] to-[#183642]"></div>
-            
+
             <div class="container mx-auto px-8 py-12 max-w-7xl relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     <!-- Brand Column -->
-                    <div class="lg:col-span-2 space-y-4">
+                    <div class="lg:col-span-1 space-y-4">
                         <img src="https://njcivicinfo.org/wp-content/uploads/2024/09/NJCIC-Full-Text-Logo-300x150.png" alt="NJCIC Logo" class="h-12 w-auto brightness-0 invert opacity-90 mb-2">
                         <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
-                            Building a stronger, more informed New Jersey through community storytelling, journalism, and civic engagement.
+                            1 Normal Avenue<br>
+                            Montclair, NJ 07043
+                        </p>
+                        <p class="text-sm">
+                            <a href="mailto:info@njcivicinfo.org" class="text-gray-400 hover:text-[#2dc8d2] transition-colors">info@njcivicinfo.org</a>
                         </p>
                     </div>
 
-                    <!-- Links Column 1 -->
+                    <!-- About Us Column -->
                     <div>
-                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Resources</h4>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">About us</h4>
                         <ul class="space-y-2 text-sm text-gray-400">
-                            <li><a href="https://njcivicinfo.org/grants/" class="hover:text-[#2dc8d2] transition-colors">Grant Programs</a></li>
-                            <li><a href="https://njcivicinfo.org/press/" class="hover:text-[#2dc8d2] transition-colors">Latest News</a></li>
-                            <li><a href="https://njcivicinfo.org/team/" class="hover:text-[#2dc8d2] transition-colors">Team</a></li>
+                            <li><a href="https://njcivicinfo.org/what-we-do/" class="hover:text-[#2dc8d2] transition-colors">What we do</a></li>
+                            <li><a href="https://njcivicinfo.org/impact/" class="hover:text-[#2dc8d2] transition-colors">Impact at a glance</a></li>
+                            <li><a href="https://njcivicinfo.org/about/" class="hover:text-[#2dc8d2] transition-colors">Staff & board</a></li>
                         </ul>
                     </div>
 
-                    <!-- Links Column 2 -->
+                    <!-- Grantmaking Column -->
                     <div>
-                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contact</h4>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Grantmaking</h4>
                         <ul class="space-y-2 text-sm text-gray-400">
-                            <li><a href="mailto:info@njcivicinfo.org" class="hover:text-[#2dc8d2] transition-colors">Get in Touch</a></li>
-                            <li><a href="https://secure.everyaction.com/-A4uO6gJP0ami_tIU_0paA2" class="hover:text-[#2dc8d2] transition-colors">Subscribe</a></li>
-                            <li class="pt-4 text-xs text-gray-600">Created by <a href="https://github.com/jamditis" class="hover:text-gray-400 underline decoration-gray-700 underline-offset-2">Joe Amditis</a> | <a href="https://centerforcooperativemedia.org">Center for Cooperative Media</a></li>
+                            <li><a href="https://njcivicinfo.org/grantmaking/" class="hover:text-[#2dc8d2] transition-colors">Program priorities & strategies</a></li>
+                            <li><a href="https://njcivicinfo.org/map" class="hover:text-[#2dc8d2] transition-colors">Grantee map</a></li>
+                            <li><a href="https://njcivicinfo.org/grantmaking/#application-process" class="hover:text-[#2dc8d2] transition-colors">Application process</a></li>
+                            <li><a href="https://njcic.grantplatform.com/" class="hover:text-[#2dc8d2] transition-colors">Grant application portal</a></li>
+                            <li><a href="https://njcivicinfo.org/faqs/" class="hover:text-[#2dc8d2] transition-colors">Frequently asked questions</a></li>
                         </ul>
                     </div>
+
+                    <!-- Stay Connected Column -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Stay connected</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="https://secure.everyaction.com/-A4uO6gJP0ami_tIU_0paA2" class="hover:text-[#2dc8d2] transition-colors">Subscribe to newsletter</a></li>
+                            <li><a href="mailto:info@njcivicinfo.org" class="hover:text-[#2dc8d2] transition-colors">Contact us</a></li>
+                        </ul>
+                        <p class="pt-4 text-xs text-gray-600">Map built by <a href="https://github.com/jamditis" class="hover:text-gray-400 underline decoration-gray-700 underline-offset-2">Joe Amditis</a> | <a href="https://centerforcooperativemedia.org" class="hover:text-gray-400 underline decoration-gray-700 underline-offset-2">Center for Cooperative Media</a></p>
+                    </div>
                 </div>
-                
+
                 <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
-                    <p>&copy; 2026 NJ Civic Information Consortium. All rights reserved.</p>
+                    <p>&copy; 2026 New Jersey Civic Information Consortium. All rights reserved.</p>
                 </div>
             </div>
         </footer>
