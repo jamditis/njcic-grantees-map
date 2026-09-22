@@ -1,42 +1,20 @@
 // Service Worker for NJCIC Grantees Map
-// Provides offline support and caching
+// Provides offline support; always prefers fresh content over cache
 
-const CACHE_NAME = 'njcic-map-v2';
+const CACHE_NAME = 'njcic-map-v3';
 const OFFLINE_URL = '404.html';
 
-// Assets to cache on install
+// Only the offline fallback page needs to be precached
 const ASSETS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/js/app.js',
-    '/data/grantees.json',
-    '/404.html',
-    // External dependencies (CDN)
-    'https://cdn.tailwindcss.com',
-    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
-    'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css',
-    'https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css',
-    'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js',
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Special+Elite&display=swap'
+    '/404.html'
 ];
 
-// Install event - cache assets
+// Install event - cache offline fallback
 self.addEventListener('install', event => {
     console.log('[ServiceWorker] Install');
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('[ServiceWorker] Caching app shell');
-                // Cache all assets individually to handle failures gracefully
-                return Promise.allSettled(
-                    ASSETS_TO_CACHE.map(url =>
-                        cache.add(url).catch(err => {
-                            console.log('[ServiceWorker] Failed to cache:', url, err.message);
-                        })
-                    )
-                );
-            })
+            .then(cache => cache.addAll(ASSETS_TO_CACHE))
             .then(() => self.skipWaiting())
             .catch(err => {
                 console.log('[ServiceWorker] Install failed:', err.message);
@@ -63,7 +41,7 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network-first, falling back to cache only when offline
 self.addEventListener('fetch', event => {
     // Skip non-GET requests
     if (event.request.method !== 'GET') {
@@ -76,48 +54,40 @@ self.addEventListener('fetch', event => {
     }
 
     event.respondWith(
-        caches.match(event.request)
-            .then(cachedResponse => {
-                if (cachedResponse) {
-                    // Return cached version
-                    return cachedResponse;
+        fetch(event.request)
+            .then(response => {
+                // Check if valid response
+                if (!response || response.status !== 200 || response.type !== 'basic') {
+                    return response;
                 }
 
-                // Not in cache, fetch from network
-                return fetch(event.request)
-                    .then(response => {
-                        // Check if valid response
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
+                // Clone and cache the fresh response for offline fallback
+                const responseToCache = response.clone();
+                caches.open(CACHE_NAME)
+                    .then(cache => {
+                        if (event.request.url.startsWith(self.location.origin)) {
+                            cache.put(event.request, responseToCache);
                         }
-
-                        // Clone the response
-                        const responseToCache = response.clone();
-
-                        // Add to cache for future use
-                        caches.open(CACHE_NAME)
-                            .then(cache => {
-                                // Only cache same-origin requests
-                                if (event.request.url.startsWith(self.location.origin)) {
-                                    cache.put(event.request, responseToCache);
-                                }
-                            });
-
-                        return response;
-                    })
-                    .catch(error => {
-                        console.log('[ServiceWorker] Fetch failed:', error);
-
-                        // For navigation requests, show offline page
-                        if (event.request.mode === 'navigate') {
-                            return caches.match(OFFLINE_URL);
-                        }
-
-                        return new Response('Offline', {
-                            status: 503,
-                            statusText: 'Service Unavailable'
-                        });
                     });
+
+                return response;
+            })
+            .catch(() => {
+                // Offline - fall back to whatever we have cached
+                return caches.match(event.request).then(cachedResponse => {
+                    if (cachedResponse) {
+                        return cachedResponse;
+                    }
+
+                    if (event.request.mode === 'navigate') {
+                        return caches.match(OFFLINE_URL);
+                    }
+
+                    return new Response('Offline', {
+                        status: 503,
+                        statusText: 'Service Unavailable'
+                    });
+                });
             })
     );
 });
