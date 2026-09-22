@@ -813,15 +813,16 @@ window.shareViaEmail = shareViaEmail;
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', init);
 
-// Register service worker for offline support
+// Remove any previously installed service worker so visitors always get
+// fresh content instead of a stale cached copy
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-            .then(registration => {
-                console.log('ServiceWorker registered:', registration.scope);
+        navigator.serviceWorker.getRegistrations()
+            .then(registrations => {
+                registrations.forEach(registration => registration.unregister());
             })
             .catch(error => {
-                console.log('ServiceWorker registration failed:', error);
+                console.log('ServiceWorker unregister failed:', error);
             });
     });
 }
